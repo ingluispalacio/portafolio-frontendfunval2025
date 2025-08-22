@@ -1,0 +1,433 @@
+#particles-js {
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+  top: 0;
+  left: 0;
+}
+#projects {
+  display: none;  
+  opacity: 0;
+  transform: scale(0.9);
+  transition: opacity 0.8s ease, transform 0.8s ease;
+}
+
+#projects.show {
+  display: flex;   
+  opacity: 1;
+  transform: scale(1);
+}
+
+.laptop {
+  position: relative;
+  width: 82%;
+  height: 370px;
+  transition: transform 1s ease-in-out;
+  transform-origin: center right;
+}
+.laptop.zoomInMonitor {
+  animation: zoomInLaptop 1s forwards;
+  width: 100vw;
+  height: 100vh; 
+  position: fixed; 
+  top: 0;
+  left: 0;
+  z-index: 2; 
+}
+
+.laptop .monitor {
+  position: absolute;
+  border: 4px solid #4d4d4d;
+  border-radius: 5px 5px 0 0;
+  height: 54%;
+  background: #ffffff;
+  left: 20px;
+  right: 20px;
+  top: 35px;
+   opacity: 0;
+  visibility: hidden;
+  -webkit-transform: perspective(1000px) rotateX(15deg);
+  -moz-transform: perspective(1000px) rotateX(15deg);
+  transform: perspective(1000px) rotateX(15deg);
+  -webkit-animation: open-laptop-monitor 2s forwards;
+  -moz-animation: open-laptop-monitor 2s forwards;
+  animation: open-laptop-monitor 2s forwards;
+  animation-delay: 5.8s;
+}
+
+.laptop .monitor.fullscreen {
+  transform: perspective(0) rotateX(0) !important;
+  height: 100% !important;
+  left: 0 !important;
+  right: 0 !important;
+  top: 0 !important;
+  opacity: 1 !important;
+  visibility: visible !important;
+  animation: none !important;
+}
+
+
+.laptop .monitor .monitor-body {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: 5px solid #000000;
+  border-radius: 1px 1px 0 0;
+  background: #262626;
+  -webkit-animation: start-monitor 0.5s 1.5s forwards;
+  -o-animation: start-monitor 0.5s 1.5s forwards;
+  animation: start-monitor 0.5s 1.5s forwards;
+  animation-delay: 7.8s;
+}
+.laptop .monitor .monitor-body text {
+  opacity: 0;
+  -webkit-animation: ShowText 0.5s 2s forwards;
+  -o-animation: ShowText 0.5s 2s forwards;
+  animation: ShowText 0.5s 2s forwards;
+  animation-delay: 8.3s;
+}
+
+.laptop .bottom_part {
+  position: absolute;
+  border: 5px solid #262626;
+  height: 57%;
+  background: #262626;
+  border-radius: 0 0 5px 5px ;
+  left: 0px;
+  right: 0px;
+  bottom: 2px;
+  opacity: 0;
+  visibility: hidden;
+  -webkit-transform: perspective(1000px) rotateX(72deg);
+  -moz-transform: perspective(1000px) rotateX(72deg);
+  transform: perspective(1000px) rotateX(72deg);
+  -webkit-animation: open-laptop-bottom-part 2s forwards;
+  -webkit-animation: open-laptop-bottom-part 2s forwards;
+  animation: open-laptop-bottom-part 2s forwards;
+  animation-delay: 5.8s;
+}
+
+.laptop .keyboard {
+  padding: 7px;
+  padding-bottom: 3px;
+  background: #4d4d4d;
+  margin-top: 5px;
+  margin-left: 5px;
+  margin-right: 5px;
+}
+.laptop .keyboard img {
+  width: 100%;
+}
+
+.laptop .touchpad {
+  background: #4d4d4d;
+  width: 75px;
+  padding: 10px;
+  height: 57px;
+  margin-top: 6px;
+}
+
+.animate-fadeInUp {
+  animation: fadeInUp-home 1.0s ease-out both;  
+  animation-delay: 4.3s;                    
+}
+
+.animate-fadeSlideUp {
+  animation: fadeSlideUp-home 0.9s ease-out both;
+  animation-delay: 4.6s;                   
+}
+
+.animate-fadeSlideUp:nth-of-type(2) {
+  animation-delay: 4.8s;                    
+}
+
+.animate-blurIn {
+  animation: blurIn-home 1.0s ease-out both;
+  animation-delay: 4.3s;                    
+}
+
+@keyframes zoomInLaptop {
+  from {
+    transform: scale(0.5) translateY(100px);
+    opacity: 0;
+  }
+  to {
+    transform: scale(1) translateY(0);
+    opacity: 1;
+  }
+}
+
+@-webkit-keyframes open-laptop-monitor {
+  0% {
+     opacity: 0.2;
+    visibility: visible;
+    -webkit--transform: perspective(1000px) rotateX(-89deg);
+    transform: perspective(1000px) rotateX(-89deg);
+    left: 0px;
+    right: 0px;
+    top: 70px;
+  }
+  55% {
+    opacity: 0.5;
+    visibility: visible;
+    top: 36px;
+  }
+  100% {
+    opacity: 1;
+    visibility: visible;
+    -webkit-transform: perspective(1000px) rotateX(15deg);
+    transform: perspective(1000px) rotateX(15deg);
+    left: 20px;
+    right: 20px;
+  }
+}
+@-moz-keyframes open-laptop-monitor {
+  0% {    
+     opacity: 0.2;
+    visibility: visible;
+    -moz-transform: perspective(1000px) rotateX(-89deg);
+    transform: perspective(1000px) rotateX(-89deg);
+    left: 0px;
+    right: 0px;
+    top: 70px;
+  }
+  55% {
+    opacity: 0.5;
+    visibility: visible;
+    top: 36px;
+  }
+  100% {
+    opacity: 1;
+    visibility: visible;
+    -moz-transform: perspective(1000px) rotateX(15deg);
+    transform: perspective(1000px) rotateX(15deg);
+    left: 20px;
+    right: 20px;
+  }
+}
+@keyframes open-laptop-monitor {
+  0% {
+    opacity: 0.2;
+    visibility: visible;
+    -webkit-transform: perspective(1000px) rotateX(-89deg);
+    -moz-transform: perspective(1000px) rotateX(-89deg);
+    transform: perspective(1000px) rotateX(-89deg);
+    left: 0px;
+    right: 0px;
+    top: 70px;
+  }
+  55% {
+    opacity: 0.5;
+    visibility: visible;
+    top: 36px;
+  }
+  100% {
+    opacity: 1;
+    visibility: visible;
+    -webkit-transform: perspective(1000px) rotateX(15deg);
+    -moz-transform: perspective(1000px) rotateX(15deg);
+    transform: perspective(1000px) rotateX(15deg);
+    left: 20px;
+    right: 20px;
+  }
+}
+
+@-webkit-keyframes open-laptop-bottom-part {
+  0% {
+     opacity: 0.2;
+    visibility: visible;
+    -webkit-transform: perspective(1000px) rotateX(89deg);
+    transform: perspective(1000px) rotateX(89deg);
+    left: 0px;
+    right: 0px;
+    bottom: 70px;
+  }
+  90% {
+    opacity: 0.7;
+    visibility: visible;
+    bottom: 2px;
+  }
+  100% {
+    opacity: 1;
+    visibility: visible;
+    -webkit-transform: perspective(1000px) rotateX(72deg);
+    transform: perspective(1000px) rotateX(72deg);
+    left: 0px;
+    right: 0px;
+  }
+}
+@-moz-keyframes open-laptop-bottom-part {
+  0% {
+     opacity: 0.2;
+    visibility: visible;
+    -moz-transform: perspective(1000px) rotateX(89deg);
+    transform: perspective(1000px) rotateX(89deg);
+    left: 0px;
+    right: 0px;
+    bottom: 70px;
+  }
+  90% {
+    opacity: 0.7;
+    visibility: visible;
+    bottom: 2px;
+  }
+  100% {
+    opacity: 1;
+    visibility: visible;
+    -moz-transform: perspective(1000px) rotateX(72deg);
+    transform: perspective(1000px) rotateX(72deg);
+    left: 0px;
+    right: 0px;
+  }
+}
+@keyframes open-laptop-bottom-part {
+  0% {
+     opacity: 0.2;
+    visibility: visible;
+    -webkit-transform: perspective(1000px) rotateX(89deg);
+    -moz-transform: perspective(1000px) rotateX(89deg);
+    transform: perspective(1000px) rotateX(89deg);
+    left: 0px;
+    right: 0px;
+    bottom: 70px;
+  }
+  90% {
+    opacity: 0.7;
+    visibility: visible;
+    bottom: 2px;
+  }
+  100% {
+    opacity: 1;
+    visibility: visible;
+    -webkit--transform: perspective(1000px) rotateX(72deg);
+    -moz-transform: perspective(1000px) rotateX(72deg);
+    transform: perspective(1000px) rotateX(72deg);
+    left: 0px;
+    right: 0px;
+  }
+}
+
+@-webkit-keyframes start-monitor {
+  0% {
+    background: #262626;
+  }
+  100% {
+    background: #ffffff;
+  }
+}
+@-moz-keyframes start-monitor {
+  0% {
+    background: #262626;
+  }
+  100% {
+    background: #ffffff;
+  }
+}
+@keyframes start-monitor {
+  0% {
+    background: #262626;
+  }
+  100% {
+    background: #ffffff;
+  }
+}
+
+@-webkit-keyframes ShowText {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+@-moz-keyframes ShowText {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+@keyframes ShowText {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+@keyframes fadeInUp-home {
+  0% {
+    opacity: 0;
+    transform: translateY(30px);
+    visibility: hidden; /* oculto durante el delay */
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+    visibility: visible;
+  }
+}
+
+@keyframes fadeSlideUp-home {
+  0% { opacity: 0; transform: translateY(20px); visibility: hidden; }
+  100% { opacity: 1; transform: translateY(0); visibility: visible; }
+}
+
+@keyframes blurIn-home {
+  0% { opacity: 0; filter: blur(10px); transform: scale(0.97); visibility: hidden; }
+  100% { opacity: 1; filter: blur(0); transform: scale(1); visibility: visible; }
+}
+
+
+
+
+
+
+@keyframes typing {
+  from { width: 0; opacity: 1; }
+  to { width: 100%; opacity: 1; }
+}
+
+@keyframes blink {
+  50% { border-color: transparent }
+}
+
+@keyframes removeCursor {
+  0% { border-right: 7px solid currentColor; }
+  100% { border-right: none; }
+}
+
+.typing {
+  overflow: hidden;
+  white-space: nowrap;
+  border-right: 7px solid currentColor; 
+  width: 0;
+  display: inline-block;
+  animation:
+    typing 2s steps(20, end) forwards,   
+    blink .7s step-end infinite,         
+    removeCursor .1s forwards 2s;        
+}
+
+.typing.delay {
+  overflow: hidden;
+  white-space: nowrap;
+  border-right: 7px solid currentColor; 
+  width: 0;
+  display: inline-block;
+  opacity: 0;          
+  animation:
+    typing 2s steps(20, end) forwards 2.2s,   
+    blink .7s step-end infinite 2.2s,         
+    removeCursor .1s forwards 4.2s;           
+  animation-fill-mode: forwards;
+}
+

@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="es" data-theme="light">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Portafolio</title>
+    <link rel="stylesheet" href="./css/output.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
+    <link rel="stylesheet" href="./css/styles.css" />
+    <script src="./js/particles.min.js"></script>
+    <script src="./js/scripts.js"></script>
+  </head>
+  <body
+    class="bg-gray-100 text-gray-800 font-sans overflow-x-hidden dark:bg-gray-900 dark:text-gray-100"
+  >
+    <div id="particles-js"></div>
+    <label
+      class="absolute top-4 right-4 p-2 rounded-fullshadow-md cursor-pointer z-10"
+    >
+      <input
+        type="checkbox"
+        value=""
+        class="sr-only peer z-10"
+        onclick="toggleDarkMode(event)"
+      />
+      <div
+        class="relative w-12 h-6 bg-gray-400 peer-focus:outline-none rounded-full peer dark:bg-gray-700 peer-checked:after:translate-x-full rtl:peer-checked:after:-translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:start-[2px] after:bg-white after:border-gray-300 after:border after:rounded-full after:h-5 after:w-5 after:transition-all dark:border-gray-600 dark:peer-checked:bg-indigo-900 flex items-center justify-between"
+      >
+        <i class="fas fa-sun toggle-icon pl-1"></i>
+        <i class="fas fa-moon toggle-icon pr-2"></i>
+      </div>
+    </label>
+
+    <section
+      id="intro"
+      class="absolute top-0 min-h-screen flex items-center justify-center px-100 pointer-events-none"
+    >
+      <div class="grid md:grid-cols-2 gap-8 items-center ">
+        <div class="h-full py-4">
+          <h1 class="text-6xl font-bold mb-4 text-gray-900 dark:text-gray-200 ">
+            <span class="typing">👋Hola, soy</span>
+
+            <span class="pl-4 text-indigo-800 dark:text-indigo-500 typing delay"
+              >Luis Palacio</span
+            >
+          </h1>
+          <p class="text-lg mb-8 pr-14 text-gray-900 dark:text-gray-200 font-bold animate-blurIn">
+            Desarrollador FullStack, apasionado por crear experiencias
+            digitales excepcionales.
+          </p>
+          <button
+            id="btnProjects"
+            class="animate-fadeSlideUp mr-8 bg-indigo-600 ring-2 ring-indigo-600 text-white px-6 py-3 rounded-lg shadow-lg hover:bg-indigo-700 transition cursor-pointer pointer-events-auto hover:shadow-indigo-500/50 dark:shadow-xl"
+            onclick="turnOnLaptop(event)"
+          >
+            Ver mis proyectos
+          </button>
+          <button
+            class="animate-fadeSlideUp font-semibold ring-2 ring-indigo-600 text-indigo-600 bg-gray-200 px-6 py-3 rounded-lg shadow-lg dark:bg-gray-900 dark:text-stone-50 transition cursor-pointer pointer-events-auto hover:shadow-indigo-500/50 dark:shadow-xl"
+            
+          >
+            Descargar CV
+          </button>
+          </button>
+        </div>
+        <div class="relative flex justify-center pointer-events-auto">
+          <div id="laptop-container" class="laptop">
+            <div class="monitor">
+              <div class="monitor-body">
+                <text
+                  class="bg-gray-100 dark:bg-gray-800/50 h-full w-full flex flex-col justify-center items-center p-0 m-0"
+                >
+                  <div
+                    class="text-3xl text-shadow-white text-indigo-800 dark:text-indigo-600"
+                  >
+                    <b class="">Bienvenido</b>
+                  </div>
+                  <div
+                    class="text-2xl text-shadow-white text-indigo-900 dark:text-indigo-600"
+                  >
+                    a mi portafolio
+                  </div>
+                </text>
+              </div>
+            </div>
+
+            <div class="bottom_part">
+              <div class="keyboard">
+                <img src="./img/keyboard-black.png" />
+              </div>
+
+              <div
+                style="
+                  display: flex;
+                  justify-content: center;
+                  align-items: center;
+                "
+              >
+                <div class="touchpad"></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="projects" class="h-full w-full flex flex-col items-center justify-center bg-gray-200 dark:bg-gray-800">
+      <h2 class="text-[100%] font-bold mb-6 text-gray-900 dark:text-gray-100">Mis Proyectos</h2>
+      <div class="grid grid-cols-2 gap-6 w-full">
+        <div class=" bg-white dark:bg-gray-900 rounded-lg shadow">📂 Proyecto A</div>
+        <div class=" bg-white dark:bg-gray-900 rounded-lg shadow">📂 Proyecto B</div>
+        <div class=" bg-white dark:bg-gray-900 rounded-lg shadow">📂 Proyecto C</div>
+        <div class=" bg-white dark:bg-gray-900 rounded-lg shadow">📂 Proyecto D</div>
+      </div>
+    </section>
+  </body>
+</html>
