@@ -98,6 +98,30 @@ document.addEventListener("DOMContentLoaded", function () {
     },
     retina_detect: true,
   });
+  document.body.style.overflow = "hidden";
+
+  const monitor = document.querySelector(".laptop .monitor .monitor-body ");
+  if (monitor) {
+    monitor.addEventListener("animationend", (e) => {
+      if (e.animationName === "ShowText") {
+        document.body.style.overflow = "";
+      }
+    });
+  } else {
+    setTimeout(() => {
+      document.body.style.overflow = "";
+    }, 11000);
+  }
+
+  const progressBar = document.querySelector(".progress-bar");
+
+  window.addEventListener("scroll", function () {
+    const windowHeight = window.innerHeight;
+    const documentHeight = document.documentElement.scrollHeight;
+    const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+    const scrollPercent = (scrollTop / (documentHeight - windowHeight)) * 100;
+    progressBar.style.width = scrollPercent + "%";
+  });
 });
 
 function toggleDarkMode(event) {
@@ -120,72 +144,16 @@ function turnOnLaptop(event) {
   if (event) {
     event.stopPropagation();
   }
-  const laptop = document.getElementById("laptop-container");
-  const monitor = laptop.querySelector(".monitor");
-  const monitorBody = monitor.querySelector(".monitor-body");
-  const bottomPart = laptop.querySelector(".bottom_part");
-  const projects = document.getElementById("projects");
-  const clonedProjects = projects.cloneNode(true);
-  
-  clonedProjects.classList.add("show");  
-   
-  monitorBody.style.display= "block";
-  monitorBody.innerHTML = "";
-  monitorBody.appendChild(clonedProjects);
-
-  setTimeout(() => {
-    bottomPart.classList.add("hidden");
-    laptop.classList.add("zoomInMonitor");
-    monitor.classList.add("fullscreen");
-  }, 500);
-  
-  
-}
-
-function turnOnLaptop_new(event) {
-  if (event) event.stopPropagation();
-
-  const laptop = document.getElementById("laptop-container");
-  const monitor = laptop.querySelector(".monitor");
-  const monitorBody = monitor.querySelector(".monitor-body");
-  const bottomPart = laptop.querySelector(".bottom_part");
-  const projects = document.getElementById("projects");
-
-  // Clonar proyectos dentro de la pantalla
-  const clonedProjects = projects.cloneNode(true);
-  clonedProjects.classList.add("show");
-  bottomPart.classList.add("hidden");
-
-  monitorBody.style.display = "block";
-  monitorBody.innerHTML = "";
-  monitorBody.appendChild(clonedProjects);
-
-  // Calcular escala necesaria
-  const rect = laptop.getBoundingClientRect();
-  const scaleX = window.innerWidth / rect.width;
-  const scaleY = window.innerHeight / rect.height;
-  const scale = Math.min(scaleX, scaleY);
-
-  // Calcular traslación para llevarlo a (0,0)
-  const translateX = -rect.left;
-  const translateY = -rect.top;
-
-  // Forzar reflow antes de aplicar animación (para suavidad)
-  laptop.offsetHeight;
-  setTimeout(() => {
-      laptop.classList.add("fullscreen");
-  laptop.style.transform = `translate(${translateX}px, ${translateY}px) scale(${scale})`;
-  }, 1000);
-
+  document.getElementById("projects").scrollIntoView({ behavior: "smooth" });
 }
 
 // También activar con scroll
-window.addEventListener("scroll", () => {
-  const projectsSection = document.getElementById("projects");
-  const rect = projectsSection.getBoundingClientRect();
-  const laptop = document.getElementById("laptop-container");
+// window.addEventListener("scroll", () => {
+//   const projectsSection = document.getElementById("projects");
+//   const rect = projectsSection.getBoundingClientRect();
+//   const laptop = document.getElementById("laptop-container");
 
-  if (rect.top < window.innerHeight && rect.bottom >= 0) {
-    laptop.classList.add("zoomIn");
-  }
-});
+//   if (rect.top < window.innerHeight && rect.bottom >= 0) {
+//     laptop.classList.add("zoomIn");
+//   }
+// });

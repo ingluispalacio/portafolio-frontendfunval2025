@@ -1,24 +1,30 @@
 <!DOCTYPE html>
-<html lang="es" data-theme="light">
+<html lang="es">
   <head>
     <meta charset="UTF-8" />
-    <title>Portafolio</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Portafolio | Luis Palacio</title>
     <link rel="stylesheet" href="./css/output.css" />
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
-    />
     <link rel="stylesheet" href="./css/styles.css" />
     <script src="./js/particles.min.js"></script>
     <script src="./js/scripts.js"></script>
   </head>
   <body
-    class="bg-gray-100 text-gray-800 font-sans overflow-x-hidden dark:bg-gray-900 dark:text-gray-100"
+    class="bg-gray-100 text-gray-800 font-sans overflow-x-hidden dark:bg-gray-900 dark:text-gray-100 flex flex-col items-center"
   >
-    <div id="particles-js"></div>
-    <label
-      class="absolute top-4 right-4 p-2 rounded-fullshadow-md cursor-pointer z-10"
+    <!-- Barra de progreso -->
+    <div
+      class="fixed top-0 left-0 w-full h-1.5 bg-gray-100 dark:bg-gray-900 z-50"
     >
+      <div
+        class="progress-bar h-full bg-gradient-to-r from-indigo-500 to-purple-600 transition-all duration-300"
+        style="width: 0%"
+      ></div>
+    </div>
+
+    <div id="particles-js"></div>
+
+    <label class="fixed top-6 right-6 p-2 rounded-full cursor-pointer z-10">
       <input
         type="checkbox"
         value=""
@@ -26,79 +32,560 @@
         onclick="toggleDarkMode(event)"
       />
       <div
-        class="relative w-12 h-6 bg-gray-400 peer-focus:outline-none rounded-full peer dark:bg-gray-700 peer-checked:after:translate-x-full rtl:peer-checked:after:-translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:start-[2px] after:bg-white after:border-gray-300 after:border after:rounded-full after:h-5 after:w-5 after:transition-all dark:border-gray-600 dark:peer-checked:bg-indigo-900 flex items-center justify-between"
+        class="relative h-13 w-7 md:w-13 md:h-7 bg-gray-400 peer-focus:outline-none rounded-full peer dark:bg-gray-700 peer-checked:after:translate-y-full md:peer-checked:after:translate-x-full md:peer-checked:after:translate-y-0 rtl:peer-checked:after:-translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:left-[2px] md:after:top-[2px] md:after:start-[2px] after:bg-white after:border-gray-300 after:border after:rounded-full after:h-6 after:w-6 after:transition-all dark:border-gray-600 dark:peer-checked:bg-indigo-900 flex flex-col md:flex-row items-center justify-between py-1 md:py-0"
       >
-        <i class="fas fa-sun toggle-icon pl-1"></i>
-        <i class="fas fa-moon toggle-icon pr-2"></i>
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          viewBox="0 0 20 20"
+          fill="currentColor"
+          class="size-6"
+        >
+          <path
+            d="M10 2a.75.75 0 0 1 .75.75v1.5a.75.75 0 0 1-1.5 0v-1.5A.75.75 0 0 1 10 2ZM10 15a.75.75 0 0 1 .75.75v1.5a.75.75 0 0 1-1.5 0v-1.5A.75.75 0 0 1 10 15ZM10 7a3 3 0 1 0 0 6 3 3 0 0 0 0-6ZM15.657 5.404a.75.75 0 1 0-1.06-1.06l-1.061 1.06a.75.75 0 0 0 1.06 1.06l1.06-1.06ZM6.464 14.596a.75.75 0 1 0-1.06-1.06l-1.06 1.06a.75.75 0 0 0 1.06 1.06l1.06-1.06ZM18 10a.75.75 0 0 1-.75.75h-1.5a.75.75 0 0 1 0-1.5h1.5A.75.75 0 0 1 18 10ZM5 10a.75.75 0 0 1-.75.75h-1.5a.75.75 0 0 1 0-1.5h1.5A.75.75 0 0 1 5 10ZM14.596 15.657a.75.75 0 0 0 1.06-1.06l-1.06-1.061a.75.75 0 1 0-1.06 1.06l1.06 1.06ZM5.404 6.464a.75.75 0 0 0 1.06-1.06l-1.06-1.06a.75.75 0 1 0-1.061 1.06l1.06 1.06Z"
+          />
+        </svg>
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          viewBox="0 0 20 20"
+          fill="currentColor"
+          class="size-6"
+        >
+          <path
+            fill-rule="evenodd"
+            d="M7.455 2.004a.75.75 0 0 1 .26.77 7 7 0 0 0 9.958 7.967.75.75 0 0 1 1.067.853A8.5 8.5 0 1 1 6.647 1.921a.75.75 0 0 1 .808.083Z"
+            clip-rule="evenodd"
+          />
+        </svg>
       </div>
     </label>
 
     <section
-      id="intro"
-      class="absolute top-0 min-h-screen flex items-center justify-center px-100 pointer-events-none"
+      class="min-h-screen flex flex-col md:flex-row items-center justify-center gap-3 md:w-[85%] lg:w-[95%] xl:w-[70%] pt-16"
     >
-      <div class="grid md:grid-cols-2 gap-8 items-center ">
-        <div class="h-full py-4">
-          <h1 class="text-6xl font-bold mb-4 text-gray-900 dark:text-gray-200 ">
-            <span class="typing">👋Hola, soy</span>
-
-            <span class="pl-4 text-indigo-800 dark:text-indigo-500 typing delay"
-              >Luis Palacio</span
-            >
-          </h1>
-          <p class="text-lg mb-8 pr-14 text-gray-900 dark:text-gray-200 font-bold animate-blurIn">
-            Desarrollador FullStack, apasionado por crear experiencias
-            digitales excepcionales.
-          </p>
+      <div
+        class="pt-10 px-[20%] md:px-10 md:pt-0 flex flex-col md:h-100 md:gap-2 lg:gap-2 lg:w-[50%]"
+      >
+        <h1
+          class="text-5xl lg:text-6xl font-bold mb-4 text-gray-900 dark:text-gray-200"
+        >
+          <span class="typing">👋Hola, soy</span>
+          <span class="pl-4 text-indigo-800 dark:text-indigo-500 typing delay"
+            >Luis Palacio</span
+          >
+        </h1>
+        <p
+          class="md:text-lg mb-8 pr-14 text-gray-900 dark:text-gray-200 font-semibold animate-blurIn"
+        >
+          Desarrollador FullStack, apasionado por crear experiencias digitales
+          excepcionales.
+        </p>
+        <div class="flex gap-1 items-center">
           <button
             id="btnProjects"
-            class="animate-fadeSlideUp mr-8 bg-indigo-600 ring-2 ring-indigo-600 text-white px-6 py-3 rounded-lg shadow-lg hover:bg-indigo-700 transition cursor-pointer pointer-events-auto hover:shadow-indigo-500/50 dark:shadow-xl"
+            class="animate-fadeSlideUp text-xs lg:text-lg mr-8 bg-indigo-600 ring-2 ring-indigo-600 text-white px-4 py-2 lg:px-6 lg:py-3 rounded-lg shadow-lg hover:bg-indigo-700 transition cursor-pointer pointer-events-auto hover:shadow-indigo-500/50 dark:shadow-xl"
             onclick="turnOnLaptop(event)"
           >
             Ver mis proyectos
           </button>
           <button
-            class="animate-fadeSlideUp font-semibold ring-2 ring-indigo-600 text-indigo-600 bg-gray-200 px-6 py-3 rounded-lg shadow-lg dark:bg-gray-900 dark:text-stone-50 transition cursor-pointer pointer-events-auto hover:shadow-indigo-500/50 dark:shadow-xl"
-            
+            class="flex animate-fadeSlideUp text-xs lg:text-lg font-semibold ring-2 ring-indigo-600 text-indigo-600 bg-gray-200 px-4 py-2 lg:px-6 lg:py-3 rounded-lg shadow-lg dark:bg-gray-900 dark:text-stone-50 transition cursor-pointer pointer-events-auto hover:shadow-indigo-500/50 dark:shadow-xl"
           >
-            Descargar CV
-          </button>
+            <span class="pr-2"> Descargar CV </span>
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke-width="1.5"
+              stroke="currentColor"
+              class="size-4 lg:size-6"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                d="M3 16.5v2.25A2.25 2.25 0 0 0 5.25 21h13.5A2.25 2.25 0 0 0 21 18.75V16.5M16.5 12 12 16.5m0 0L7.5 12m4.5 4.5V3"
+              />
+            </svg>
           </button>
         </div>
-        <div class="relative flex justify-center pointer-events-auto">
-          <div id="laptop-container" class="laptop">
-            <div class="monitor">
-              <div class="monitor-body">
-                <text
-                  class="bg-gray-100 dark:bg-gray-800/50 h-full w-full flex flex-col justify-center items-center p-0 m-0"
+      </div>
+      <div class="flex justify-center lg:w-[50%]">
+        <div class="laptop h-100 w-80">
+          <div class="monitor w-70 h-47">
+            <div class="monitor-body">
+              <text
+                class="bg-gray-100 dark:bg-gray-800/50 h-full w-full flex flex-col justify-center items-center p-0 m-0"
+              >
+                <div
+                  class="text-3xl text-shadow-white text-indigo-800 dark:text-indigo-600"
                 >
-                  <div
-                    class="text-3xl text-shadow-white text-indigo-800 dark:text-indigo-600"
-                  >
-                    <b class="">Bienvenido</b>
-                  </div>
-                  <div
-                    class="text-2xl text-shadow-white text-indigo-900 dark:text-indigo-600"
-                  >
-                    a mi portafolio
-                  </div>
-                </text>
-              </div>
+                  <b class="">Bienvenido</b>
+                </div>
+                <div
+                  class="text-2xl text-shadow-white text-indigo-900 dark:text-indigo-600"
+                >
+                  a mi portafolio
+                </div>
+              </text>
+            </div>
+          </div>
+
+          <div class="bottom_part h-70 pt-2">
+            <div class="bg-gray-300/50 dark:bg-gray-500/50 h-40 px-2 pt-2 mb-3">
+              <img src="./img/keyboard-black.png" />
             </div>
 
-            <div class="bottom_part">
-              <div class="keyboard">
-                <img src="./img/keyboard-black.png" />
+            <div class="flex justify-center items-center">
+              <div class="touchpad"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section
+      class="w-full py-16 bg-gradient-to-br from-indigo-50 to-blue-100 dark:from-gray-800 dark:to-indigo-900/20"
+    >
+      <div class="container mx-auto px-6">
+        <h2
+          class="text-3xl font-bold text-center mb-4 text-gray-800 dark:text-white"
+        >
+          Mis
+          <span class="text-indigo-600 dark:text-indigo-400">Habilidades</span>
+        </h2>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-5xl mx-auto">
+          <!-- Frontend Development -->
+          <div
+            class="bg-white dark:bg-gray-800 rounded-xl shadow-lg p-6 transform transition-all duration-300 hover:scale-[1.02]"
+          >
+            <div class="flex items-center mb-4">
+              <div
+                class="w-14 h-14 bg-indigo-100 dark:bg-indigo-900/30 rounded-lg flex items-center justify-center mr-4"
+              >
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  class="h-8 w-8 text-indigo-600 dark:text-indigo-400"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  stroke="currentColor"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="2"
+                    d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4"
+                  />
+                </svg>
+              </div>
+              <h3 class="text-xl font-semibold text-gray-800 dark:text-white">
+                Frontend Development
+              </h3>
+            </div>
+
+            <div class="space-y-4 mt-6">
+              <div>
+                <div class="flex justify-between mb-1">
+                  <span
+                    class="text-sm font-medium text-gray-700 dark:text-gray-300"
+                    >React</span
+                  >
+                  <span
+                    class="text-sm font-medium text-gray-700 dark:text-gray-300"
+                    >90%</span
+                  >
+                </div>
+                <div
+                  class="w-full bg-gray-200 rounded-full h-2.5 dark:bg-gray-700"
+                >
+                  <div
+                    class="bg-indigo-600 h-2.5 rounded-full"
+                    style="width: 90%"
+                  ></div>
+                </div>
               </div>
 
+              <div>
+                <div class="flex justify-between mb-1">
+                  <span
+                    class="text-sm font-medium text-gray-700 dark:text-gray-300"
+                    >Vue</span
+                  >
+                  <span
+                    class="text-sm font-medium text-gray-700 dark:text-gray-300"
+                    >65%</span
+                  >
+                </div>
+                <div
+                  class="w-full bg-gray-200 rounded-full h-2.5 dark:bg-gray-700"
+                >
+                  <div
+                    class="bg-indigo-600 h-2.5 rounded-full"
+                    style="width: 65%"
+                  ></div>
+                </div>
+              </div>
+
+              <div>
+                <div class="flex justify-between mb-1">
+                  <span
+                    class="text-sm font-medium text-gray-700 dark:text-gray-300"
+                    >JavaScript</span
+                  >
+                  <span
+                    class="text-sm font-medium text-gray-700 dark:text-gray-300"
+                    >90%</span
+                  >
+                </div>
+                <div
+                  class="w-full bg-gray-200 rounded-full h-2.5 dark:bg-gray-700"
+                >
+                  <div
+                    class="bg-indigo-600 h-2.5 rounded-full"
+                    style="width: 98%"
+                  ></div>
+                </div>
+              </div>
+
+              <div>
+                <div class="flex justify-between mb-1">
+                  <span
+                    class="text-sm font-medium text-gray-700 dark:text-gray-300"
+                    >Tailwind CSS</span
+                  >
+                  <span
+                    class="text-sm font-medium text-gray-700 dark:text-gray-300"
+                    >70%</span
+                  >
+                </div>
+                <div
+                  class="w-full bg-gray-200 rounded-full h-2.5 dark:bg-gray-700"
+                >
+                  <div
+                    class="bg-indigo-600 h-2.5 rounded-full"
+                    style="width: 70%"
+                  ></div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div
+            class="bg-white dark:bg-gray-800 rounded-xl shadow-lg p-6 transform transition-all duration-300 hover:scale-[1.02]"
+          >
+            <div class="flex items-center mb-4">
               <div
-                style="
-                  display: flex;
-                  justify-content: center;
-                  align-items: center;
-                "
+                class="w-14 h-14 bg-indigo-100 dark:bg-indigo-900/30 rounded-lg flex items-center justify-center mr-4"
               >
-                <div class="touchpad"></div>
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  class="h-8 w-8 text-indigo-600 dark:text-indigo-400"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  stroke="currentColor"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="2"
+                    d="M5 12h14M5 12a2 2 0 01-2-2V6a2 2 0 012-2h14a2 2 0 012 2v4a2 2 0 01-2 2M5 12a2 2 0 00-2 2v4a2 2 0 002 2h14a2 2 0 002-2v-4a2 2 0 00-2-2"
+                  />
+                </svg>
+              </div>
+              <h3 class="text-xl font-semibold text-gray-800 dark:text-white">
+                Backend Development
+              </h3>
+            </div>
+
+            <div class="space-y-4 mt-6">
+              <div>
+                <div class="flex justify-between mb-1">
+                  <span
+                    class="text-sm font-medium text-gray-700 dark:text-gray-300"
+                    >Node.js</span
+                  >
+                  <span
+                    class="text-sm font-medium text-gray-700 dark:text-gray-300"
+                    >88%</span
+                  >
+                </div>
+                <div
+                  class="w-full bg-gray-200 rounded-full h-2.5 dark:bg-gray-700"
+                >
+                  <div
+                    class="bg-indigo-600 h-2.5 rounded-full"
+                    style="width: 88%"
+                  ></div>
+                </div>
+              </div>
+
+              <div>
+                <div class="flex justify-between mb-1">
+                  <span
+                    class="text-sm font-medium text-gray-700 dark:text-gray-300"
+                    >Express</span
+                  >
+                  <span
+                    class="text-sm font-medium text-gray-700 dark:text-gray-300"
+                    >85%</span
+                  >
+                </div>
+                <div
+                  class="w-full bg-gray-200 rounded-full h-2.5 dark:bg-gray-700"
+                >
+                  <div
+                    class="bg-indigo-600 h-2.5 rounded-full"
+                    style="width: 85%"
+                  ></div>
+                </div>
+              </div>
+
+              <div>
+                <div class="flex justify-between mb-1">
+                  <span
+                    class="text-sm font-medium text-gray-700 dark:text-gray-300"
+                    >NestJs</span
+                  >
+                  <span
+                    class="text-sm font-medium text-gray-700 dark:text-gray-300"
+                    >75%</span
+                  >
+                </div>
+                <div
+                  class="w-full bg-gray-200 rounded-full h-2.5 dark:bg-gray-700"
+                >
+                  <div
+                    class="bg-indigo-600 h-2.5 rounded-full"
+                    style="width: 75%"
+                  ></div>
+                </div>
+              </div>
+
+              <div>
+                <div class="flex justify-between mb-1">
+                  <span
+                    class="text-sm font-medium text-gray-700 dark:text-gray-300"
+                    >PHP</span
+                  >
+                  <span
+                    class="text-sm font-medium text-gray-700 dark:text-gray-300"
+                    >80%</span
+                  >
+                </div>
+                <div
+                  class="w-full bg-gray-200 rounded-full h-2.5 dark:bg-gray-700"
+                >
+                  <div
+                    class="bg-indigo-600 h-2.5 rounded-full"
+                    style="width: 80%"
+                  ></div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div
+            class="bg-white dark:bg-gray-800 rounded-xl shadow-lg p-6 transform transition-all duration-300 hover:scale-[1.02]"
+          >
+            <div class="flex items-center mb-4">
+              <div
+                class="w-14 h-14 bg-indigo-100 dark:bg-indigo-900/30 rounded-lg flex items-center justify-center mr-4"
+              >
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  class="h-8 w-8 text-indigo-600 dark:text-indigo-400"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  stroke="currentColor"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="2"
+                    d="M3 15a4 4 0 004 4h9a5 5 0 10-.1-9.999 5.002 5.002 0 10-9.78 2.096A4.001 4.001 0 003 15z"
+                  />
+                </svg>
+              </div>
+              <h3 class="text-xl font-semibold text-gray-800 dark:text-white">
+                Base de Datos
+              </h3>
+            </div>
+
+            <div class="space-y-4 mt-6">
+              <div>
+                <div class="flex justify-between mb-1">
+                  <span
+                    class="text-sm font-medium text-gray-700 dark:text-gray-300"
+                    >MySQL</span
+                  >
+                  <span
+                    class="text-sm font-medium text-gray-700 dark:text-gray-300"
+                    >90%</span
+                  >
+                </div>
+                <div
+                  class="w-full bg-gray-200 rounded-full h-2.5 dark:bg-gray-700"
+                >
+                  <div
+                    class="bg-indigo-600 h-2.5 rounded-full"
+                    style="width: 90%"
+                  ></div>
+                </div>
+              </div>
+
+              <div>
+                <div class="flex justify-between mb-1">
+                  <span
+                    class="text-sm font-medium text-gray-700 dark:text-gray-300"
+                    >PostgreSQL</span
+                  >
+                  <span
+                    class="text-sm font-medium text-gray-700 dark:text-gray-300"
+                    >85%</span
+                  >
+                </div>
+                <div
+                  class="w-full bg-gray-200 rounded-full h-2.5 dark:bg-gray-700"
+                >
+                  <div
+                    class="bg-indigo-600 h-2.5 rounded-full"
+                    style="width: 85%"
+                  ></div>
+                </div>
+              </div>
+
+              <div>
+                <div class="flex justify-between mb-1">
+                  <span
+                    class="text-sm font-medium text-gray-700 dark:text-gray-300"
+                    >SQL Server</span
+                  >
+                  <span
+                    class="text-sm font-medium text-gray-700 dark:text-gray-300"
+                    >80%</span
+                  >
+                </div>
+                <div
+                  class="w-full bg-gray-200 rounded-full h-2.5 dark:bg-gray-700"
+                >
+                  <div
+                    class="bg-indigo-600 h-2.5 rounded-full"
+                    style="width: 80%"
+                  ></div>
+                </div>
+              </div>
+
+              <div>
+                <div class="flex justify-between mb-1">
+                  <span
+                    class="text-sm font-medium text-gray-700 dark:text-gray-300"
+                    >MongoDB</span
+                  >
+                  <span
+                    class="text-sm font-medium text-gray-700 dark:text-gray-300"
+                    >82%</span
+                  >
+                </div>
+                <div
+                  class="w-full bg-gray-200 rounded-full h-2.5 dark:bg-gray-700"
+                >
+                  <div
+                    class="bg-indigo-600 h-2.5 rounded-full"
+                    style="width: 82%"
+                  ></div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div
+            class="bg-white dark:bg-gray-800 rounded-xl shadow-lg p-6 transform transition-all duration-300 hover:scale-[1.02]"
+          >
+            <div class="flex items-center mb-4">
+              <div
+                class="w-14 h-14 bg-indigo-100 dark:bg-indigo-900/30 rounded-lg flex items-center justify-center mr-4"
+              >
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  class="h-8 w-8 text-indigo-600 dark:text-indigo-400"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  stroke="currentColor"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="2"
+                    d="M9.75 17L9 20l-1 1h8l-1-1-.75-3M3 13h18M5 17h14a2 2 0 002-2V5a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"
+                  />
+                </svg>
+              </div>
+              <h3 class="text-xl font-semibold text-gray-800 dark:text-white">
+                DevOps & Tools
+              </h3>
+            </div>
+
+            <div class="space-y-4 mt-6">
+              <div>
+                <div class="flex justify-between mb-1">
+                  <span
+                    class="text-sm font-medium text-gray-700 dark:text-gray-300"
+                    >Git</span
+                  >
+                  <span
+                    class="text-sm font-medium text-gray-700 dark:text-gray-300"
+                    >95%</span
+                  >
+                </div>
+                <div
+                  class="w-full bg-gray-200 rounded-full h-2.5 dark:bg-gray-700"
+                >
+                  <div
+                    class="bg-indigo-600 h-2.5 rounded-full"
+                    style="width: 95%"
+                  ></div>
+                </div>
+              </div>
+
+              <div>
+                <div class="flex justify-between mb-1">
+                  <span
+                    class="text-sm font-medium text-gray-700 dark:text-gray-300"
+                    >Docker</span
+                  >
+                  <span
+                    class="text-sm font-medium text-gray-700 dark:text-gray-300"
+                    >85%</span
+                  >
+                </div>
+                <div
+                  class="w-full bg-gray-200 rounded-full h-2.5 dark:bg-gray-700"
+                >
+                  <div
+                    class="bg-indigo-600 h-2.5 rounded-full"
+                    style="width: 85%"
+                  ></div>
+                </div>
+              </div>
+
+              <div>
+                <div class="flex justify-between mb-1">
+                  <span
+                    class="text-sm font-medium text-gray-700 dark:text-gray-300"
+                    >Azure</span
+                  >
+                  <span
+                    class="text-sm font-medium text-gray-700 dark:text-gray-300"
+                    >78%</span
+                  >
+                </div>
+                <div
+                  class="w-full bg-gray-200 rounded-full h-2.5 dark:bg-gray-700"
+                >
+                  <div
+                    class="bg-indigo-600 h-2.5 rounded-full"
+                    style="width: 78%"
+                  ></div>
+                </div>
               </div>
             </div>
           </div>
@@ -106,14 +593,360 @@
       </div>
     </section>
 
-    <section id="projects" class="h-full w-full flex flex-col items-center justify-center bg-gray-200 dark:bg-gray-800">
-      <h2 class="text-[100%] font-bold mb-6 text-gray-900 dark:text-gray-100">Mis Proyectos</h2>
-      <div class="grid grid-cols-2 gap-6 w-full">
-        <div class=" bg-white dark:bg-gray-900 rounded-lg shadow">📂 Proyecto A</div>
-        <div class=" bg-white dark:bg-gray-900 rounded-lg shadow">📂 Proyecto B</div>
-        <div class=" bg-white dark:bg-gray-900 rounded-lg shadow">📂 Proyecto C</div>
-        <div class=" bg-white dark:bg-gray-900 rounded-lg shadow">📂 Proyecto D</div>
+    <section
+      id="projects"
+      class="h-full w-full flex flex-col items-center justify-center px-6 py-16 bg-white dark:bg-gray-900"
+    >
+      <h2 class="text-3xl font-bold mb-12 text-gray-900 dark:text-gray-100">
+        Mis Proyectos
+      </h2>
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-8 w-full max-w-5xl">
+        <div
+          class="bg-white dark:bg-gray-800 rounded-xl shadow-lg overflow-hidden transform transition-all duration-300 hover:scale-105 hover:shadow-xl"
+        >
+          <div
+            class="h-48 bg-gradient-to-r from-indigo-500 to-purple-600 flex items-center justify-center"
+          >
+            <span class="text-white text-5xl">🚀</span>
+          </div>
+          <div class="p-6">
+            <h3 class="text-xl font-bold mb-2 text-gray-800 dark:text-white">
+              Sistema E-commerce
+            </h3>
+            <p class="text-gray-600 dark:text-gray-300 mb-4">
+              Plataforma completa de comercio electrónico con carrito de
+              compras, pasarela de pago y panel de administración.
+            </p>
+            <div class="flex flex-wrap gap-2">
+              <span
+                class="px-3 py-1 bg-indigo-100 text-indigo-800 dark:bg-indigo-900/30 dark:text-indigo-300 rounded-full text-sm"
+                >Vue</span
+              >
+              <span
+                class="px-3 py-1 bg-indigo-100 text-indigo-800 dark:bg-indigo-900/30 dark:text-indigo-300 rounded-full text-sm"
+                >PHP</span
+              >
+              <span
+                class="px-3 py-1 bg-indigo-100 text-indigo-800 dark:bg-indigo-900/30 dark:text-indigo-300 rounded-full text-sm"
+                >MySQL</span
+              >
+            </div>
+          </div>
+        </div>
+
+        <div
+          class="bg-white dark:bg-gray-800 rounded-xl shadow-lg overflow-hidden transform transition-all duration-300 hover:scale-105 hover:shadow-xl"
+        >
+          <div
+            class="h-48 bg-gradient-to-r from-blue-500 to-cyan-600 flex items-center justify-center"
+          >
+            <span class="text-white text-5xl">📊</span>
+          </div>
+          <div class="p-6">
+            <h3 class="text-xl font-bold mb-2 text-gray-800 dark:text-white">
+              Dashboard Analytics
+            </h3>
+            <p class="text-gray-600 dark:text-gray-300 mb-4">
+              Panel de control interactivo para visualización de datos con
+              gráficos en tiempo real y reportes personalizados.
+            </p>
+            <div class="flex flex-wrap gap-2">
+              <span
+                class="px-3 py-1 bg-indigo-100 text-indigo-800 dark:bg-indigo-900/30 dark:text-indigo-300 rounded-full text-sm"
+                >React</span
+              >
+              <span
+                class="px-3 py-1 bg-indigo-100 text-indigo-800 dark:bg-indigo-900/30 dark:text-indigo-300 rounded-full text-sm"
+                >Node.js</span
+              >
+              <span
+                class="px-3 py-1 bg-indigo-100 text-indigo-800 dark:bg-indigo-900/30 dark:text-indigo-300 rounded-full text-sm"
+                >PostgreSQL</span
+              >
+            </div>
+          </div>
+        </div>
+
+        <div
+          class="bg-white dark:bg-gray-800 rounded-xl shadow-lg overflow-hidden transform transition-all duration-300 hover:scale-105 hover:shadow-xl"
+        >
+          <div
+            class="h-48 bg-gradient-to-r from-purple-500 to-pink-600 flex items-center justify-center"
+          >
+            <span class="text-white text-5xl">🌐</span>
+          </div>
+          <div class="p-6">
+            <h3 class="text-xl font-bold mb-2 text-gray-800 dark:text-white">
+              Portal de Tickets
+            </h3>
+            <p class="text-gray-600 dark:text-gray-300 mb-4">
+              Sistema de gestión de tickets para control de atencion al cliente.
+            </p>
+            <div class="flex flex-wrap gap-2">
+              <span
+                class="px-3 py-1 bg-indigo-100 text-indigo-800 dark:bg-indigo-900/30 dark:text-indigo-300 rounded-full text-sm"
+                >React</span
+              >
+              <span
+                class="px-3 py-1 bg-indigo-100 text-indigo-800 dark:bg-indigo-900/30 dark:text-indigo-300 rounded-full text-sm"
+                >Nest</span
+              >
+              <span
+                class="px-3 py-1 bg-indigo-100 text-indigo-800 dark:bg-indigo-900/30 dark:text-indigo-300 rounded-full text-sm"
+                >SQL Server</span
+              >
+            </div>
+          </div>
+        </div>
       </div>
     </section>
+
+    <section
+      class="w-full py-16 bg-gradient-to-br from-white to-indigo-50 dark:from-gray-800 dark:to-gray-900"
+    >
+      <div class="container mx-auto px-4 max-w-6xl">
+        <div class="text-center mb-12">
+          <h2 class="text-4xl font-bold text-gray-800 dark:text-white mb-4">
+            ¿Listo para
+            <span class="text-indigo-600 dark:text-indigo-400">empezar</span> tu
+            proyecto?
+          </h2>
+          <p class="text-lg text-gray-600 dark:text-gray-300 max-w-2xl mx-auto">
+            Transformemos tus ideas en soluciones digitales excepcionales. Estoy
+            a solo un mensaje de distancia.
+          </p>
+        </div>
+
+        <div class="grid md:grid-cols-2 gap-10 items-center">
+          <!-- Tarjeta de contacto -->
+          <div
+            class="contact-card bg-white dark:bg-gray-800 rounded-2xl shadow-xl p-8 border border-indigo-100 dark:border-gray-700"
+          >
+            <div class="flex items-center mb-6">
+              <div
+                class="bg-indigo-100 dark:bg-indigo-900/30 p-3 rounded-full mr-4"
+              >
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  class="h-8 w-8 text-indigo-600 dark:text-indigo-400"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  stroke="currentColor"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="2"
+                    d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"
+                  />
+                </svg>
+              </div>
+              <h3 class="text-2xl font-semibold text-gray-800 dark:text-white">
+                Contacto Directo
+              </h3>
+            </div>
+
+            <div class="space-y-4">
+              <div
+                class="flex items-center p-4 bg-indigo-50 dark:bg-indigo-900/20 rounded-lg"
+              >
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  class="h-6 w-6 text-indigo-600 dark:text-indigo-400 mr-3"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  stroke="currentColor"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="2"
+                    d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"
+                  />
+                </svg>
+                <div>
+                  <p class="text-sm text-gray-500 dark:text-gray-400">Email</p>
+                  <p class="text-indigo-600 dark:text-indigo-400 font-medium">
+                    palaciodimasluisenrique@gmail.com
+                  </p>
+                </div>
+              </div>
+
+              <div
+                class="flex items-center p-4 bg-indigo-50 dark:bg-indigo-900/20 rounded-lg"
+              >
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  class="h-6 w-6 text-indigo-600 dark:text-indigo-400 mr-3"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  stroke="currentColor"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="2"
+                    d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"
+                  />
+                </svg>
+                <div>
+                  <p class="text-sm text-gray-500 dark:text-gray-400">
+                    Whatsup
+                  </p>
+                  <p class="text-indigo-600 dark:text-indigo-400 font-medium">
+                    +57 301 388 7087
+                  </p>
+                </div>
+              </div>
+
+              <div
+                class="flex items-center p-4 bg-indigo-50 dark:bg-indigo-900/20 rounded-lg"
+              >
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  class="h-6 w-6 text-indigo-600 dark:text-indigo-400 mr-3"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  stroke="currentColor"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="2"
+                    d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"
+                  />
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="2"
+                    d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"
+                  />
+                </svg>
+                <div>
+                  <p class="text-sm text-gray-500 dark:text-gray-400">
+                    Ubicación
+                  </p>
+                  <p class="text-indigo-600 dark:text-indigo-400 font-medium">
+                    Cartagena, Colombia
+                  </p>
+                </div>
+              </div>
+            </div>
+
+            <div
+              class="mt-8 pt-6 border-t border-gray-100 dark:border-gray-700"
+            >
+              <h4
+                class="text-lg font-medium text-gray-800 dark:text-white mb-4"
+              >
+                Conectemos en redes
+              </h4>
+              <div class="flex space-x-4">
+                <a
+                  href="https://www.linkedin.com/in/luis-enrique-palacio-dimas-257658a7/"
+                  class="p-2 bg-indigo-100 dark:bg-indigo-900/30 text-indigo-600 dark:text-indigo-400 rounded-full hover:bg-indigo-200 dark:hover:bg-indigo-800 transition"
+                >
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    class="h-5 w-5"
+                    fill="currentColor"
+                    viewBox="0 0 24 24"
+                  >
+                    <path
+                      d="M12 0c-6.627 0-12 5.373-12 12s5.373 12 12 12 12-5.373 12-12-5.373-12-12-12zm-2 16h-2v-6h2v6zm-1-6.891c-.607 0-1.1-.496-1.1-1.109 0-.612.492-1.109 1.1-1.109s1.1.497 1.1 1.109c0 .613-.493 1.109-1.1 1.109zm8 6.891h-1.998v-2.861c0-1.881-2.002-1.722-2.002 0v2.861h-2v-6h2v1.093c.872-1.616 4-1.736 4 1.548v3.359z"
+                    />
+                  </svg>
+                </a>
+                <a
+                  href="https://github.com/ingluispalacio"
+                  class="p-2 bg-indigo-100 dark:bg-indigo-900/30 text-indigo-600 dark:text-indigo-400 rounded-full hover:bg-indigo-200 dark:hover:bg-indigo-800 transition"
+                >
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    class="h-5 w-5"
+                    fill="currentColor"
+                    viewBox="0 0 24 24"
+                  >
+                    <path
+                      d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"
+                    />
+                  </svg>
+                </a>
+              </div>
+            </div>
+          </div>
+
+          <div class="text-center md:text-left">
+            <div
+              class="relative inline-block md:float-right md:ml-8 mb-6 md:mb-0"
+            >
+              <img
+                src="./img/luis_small.png"
+                alt="Luis Palacio"
+                class="w-56 h-56 rounded-full object-cover shadow-xl mx-auto md:mx-0 border-4 border-white dark:border-gray-800"
+              />
+              <div
+                class="absolute -bottom-2 -right-2 bg-indigo-600 text-white py-1 px-3 rounded-full text-sm font-medium shadow-lg"
+              >
+                Disponible
+              </div>
+            </div>
+
+            <h2
+              class="text-3xl font-bold mt-8 md:mt-0 mb-6 text-gray-800 dark:text-white"
+            >
+              Hablemos sobre
+              <span class="text-indigo-600 dark:text-indigo-400"
+                >tu proyecto</span
+              >
+            </h2>
+            <p class="text-gray-600 dark:text-gray-300 mb-8 leading-relaxed">
+              Como desarrollador fullstack, estoy preparado para colaborar en tu
+              próximo proyecto. Utilizo tecnologías modernas y mejores prácticas
+              para crear soluciones escalables y de alto rendimiento.
+            </p>
+
+            <div class="animate-pulse-gentle inline-block">
+              <a
+                href="mailto:contacto@luispalacio.com"
+                class="inline-flex items-center bg-gradient-to-r from-indigo-600 to-purple-600 hover:from-indigo-700 hover:to-purple-700 text-white font-semibold px-6 py-3 rounded-lg shadow-lg transition-all duration-300 transform hover:scale-105"
+              >
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  class="h-5 w-5 mr-2"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  stroke="currentColor"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="2"
+                    d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"
+                  />
+                </svg>
+                Enviar mensaje
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <footer class="w-full py-8 bg-gray-800 text-white text-center">
+      <p>© 2025 Luis Palacio. Todos los derechos reservados.</p>
+      <div class="flex justify-center space-x-6 mt-4">
+        <a
+          href="https://github.com/ingluispalacio"
+          class="hover:text-indigo-400 transition-colors"
+          >GitHub</a
+        >
+        <a
+          href="https://www.linkedin.com/in/luis-enrique-palacio-dimas-257658a7/"
+          class="hover:text-indigo-400 transition-colors"
+          >LinkedIn</a
+        >
+      </div>
+    </footer>
   </body>
 </html>
