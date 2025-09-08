@@ -1,5 +1,5 @@
 const getSkills = async () => {
-  const response = await fetch("./data/skills.json");
+  const response = await fetch("../data/skills.json");
   return response.json();
 };
 
@@ -10,7 +10,7 @@ const fillCardSkills = async () => {
   } catch (error) {
     console.log(error)
   }
-  
+  console.log("data", data)
   const skillCards = document.getElementById("skillCards")
   data.forEach((skill) => {
     const cardContainer = document.createElement("div");

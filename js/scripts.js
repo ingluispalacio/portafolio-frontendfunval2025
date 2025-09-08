@@ -130,15 +130,16 @@ document.addEventListener("DOMContentLoaded", function () {
     const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
     const scrollPercent = (scrollTop / (documentHeight - windowHeight)) * 100;
     progressBar.style.width = scrollPercent + "%";
+    if (pathname === "/") {
+      const navbar = document.getElementById("navbar");
 
-    const navbar = document.getElementById("navbar");
-
-    if (window.scrollY > 50) {
-      navbar.classList.remove("bg-transparent");
-      navbar.classList.add("bg-white", "dark:bg-gray-900", "shadow-md");
-    } else {
-      navbar.classList.add("bg-transparent");
-      navbar.classList.remove("bg-white", "dark:bg-gray-900", "shadow-md");
+      if (window.scrollY > 50) {
+        navbar.classList.remove("bg-transparent");
+        navbar.classList.add("bg-white", "dark:bg-gray-900", "shadow-md");
+      } else {
+        navbar.classList.add("bg-transparent");
+        navbar.classList.remove("bg-white", "dark:bg-gray-900", "shadow-md");
+      }
     }
   });
 });
