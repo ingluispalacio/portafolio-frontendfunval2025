@@ -1,3 +1,7 @@
+import { fillCardSkills } from "./skills.js";
+import { fillCardProjects } from "./projects.js";
+
+const pathname = window.location.pathname;
 document.addEventListener("DOMContentLoaded", function () {
   if (
     localStorage.theme === "dark" ||
@@ -98,19 +102,24 @@ document.addEventListener("DOMContentLoaded", function () {
     },
     retina_detect: true,
   });
-  document.body.style.overflow = "hidden";
+  if (pathname === "/") {
+    document.body.style.overflow = "hidden";
 
-  const monitor = document.querySelector(".laptop .monitor .monitor-body ");
-  if (monitor) {
-    monitor.addEventListener("animationend", (e) => {
-      if (e.animationName === "ShowText") {
+    const monitor = document.querySelector(".laptop .monitor .monitor-body ");
+    if (monitor) {
+      monitor.addEventListener("animationend", (e) => {
+        if (e.animationName === "ShowText") {
+          document.body.style.overflow = "";
+          const navContent = document.getElementById("nav-content");
+          navContent.classList.remove("opacity-0", "invisible");
+          navContent.classList.add("opacity-100", "visible");
+        }
+      });
+    } else {
+      setTimeout(() => {
         document.body.style.overflow = "";
-      }
-    });
-  } else {
-    setTimeout(() => {
-      document.body.style.overflow = "";
-    }, 11000);
+      }, 9000);
+    }
   }
 
   const progressBar = document.querySelector(".progress-bar");
@@ -121,12 +130,37 @@ document.addEventListener("DOMContentLoaded", function () {
     const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
     const scrollPercent = (scrollTop / (documentHeight - windowHeight)) * 100;
     progressBar.style.width = scrollPercent + "%";
+
+    const navbar = document.getElementById("navbar");
+
+    if (window.scrollY > 50) {
+      navbar.classList.remove("bg-transparent");
+      navbar.classList.add("bg-white", "dark:bg-gray-900", "shadow-md");
+    } else {
+      navbar.classList.add("bg-transparent");
+      navbar.classList.remove("bg-white", "dark:bg-gray-900", "shadow-md");
+    }
   });
 });
+if (pathname === "/") {
+  await fillCardSkills();
 
-function toggleDarkMode(event) {
+  const btnContact = document.getElementById("btn-contact");
+
+  btnContact.addEventListener("click", (event) => {
+    if (event) {
+      event.stopPropagation();
+    }
+    document.getElementById("contact").scrollIntoView({ behavior: "smooth" });
+  });
+}
+if (pathname === "/projects.html") {
+  await fillCardProjects();
+}
+const toggleTheme = document.getElementById("toggle-theme");
+toggleTheme.addEventListener("click", (event) => {
   if (event) {
-    event.stopPropagation(); // Detiene la propagación del evento
+    event.stopPropagation();
   }
   const checkbox = document.querySelector('input[type="checkbox"]');
   if (document.documentElement.getAttribute("data-theme") === "dark") {
@@ -138,16 +172,25 @@ function toggleDarkMode(event) {
     localStorage.theme = "dark";
     checkbox.checked = true;
   }
-}
+});
+const btnMenu = document.getElementById("menu-btn");
+btnMenu.addEventListener("click", () => {
+  document.getElementById("menu").classList.toggle("hidden");
+});
 
-function turnOnLaptop(event) {
-  if (event) {
-    event.stopPropagation();
-  }
-  document.getElementById("projects").scrollIntoView({ behavior: "smooth" });
-}
+document.querySelectorAll('a[href^="#"]').forEach((link) => {
+  link.addEventListener("click", (e) => {
+    e.preventDefault();
+    const target = link.getAttribute("href");
 
-// También activar con scroll
+    if (target && target !== "#") {
+      document.querySelector(target).scrollIntoView({
+        behavior: "smooth",
+      });
+    }
+  });
+});
+
 // window.addEventListener("scroll", () => {
 //   const projectsSection = document.getElementById("projects");
 //   const rect = projectsSection.getBoundingClientRect();

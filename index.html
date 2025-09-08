@@ -7,14 +7,13 @@
     <link rel="stylesheet" href="./css/output.css" />
     <link rel="stylesheet" href="./css/styles.css" />
     <script src="./js/particles.min.js"></script>
-    <script src="./js/scripts.js"></script>
+    <script src="./js/scripts.js" type="module" defer></script>
   </head>
   <body
     class="bg-gray-100 text-gray-800 font-sans overflow-x-hidden dark:bg-gray-900 dark:text-gray-100 flex flex-col items-center"
   >
-    <!-- Barra de progreso -->
     <div
-      class="fixed top-0 left-0 w-full h-1.5 bg-gray-100 dark:bg-gray-900 z-50"
+      class="fixed top-0 left-0 w-full h-1.5 bg-gray-100 dark:bg-gray-900 z-51"
     >
       <div
         class="progress-bar h-full bg-gradient-to-r from-indigo-500 to-purple-600 transition-all duration-300"
@@ -24,42 +23,162 @@
 
     <div id="particles-js"></div>
 
-    <label class="fixed top-6 right-6 p-2 rounded-full cursor-pointer z-10">
-      <input
-        type="checkbox"
-        value=""
-        class="sr-only peer z-10"
-        onclick="toggleDarkMode(event)"
-      />
+    <nav
+      id="navbar"
+      class="fixed top-0 left-0 w-full z-50 transition-colors duration-500 bg-transparent"
+    >
       <div
-        class="relative h-13 w-7 md:w-13 md:h-7 bg-gray-400 peer-focus:outline-none rounded-full peer dark:bg-gray-700 peer-checked:after:translate-y-full md:peer-checked:after:translate-x-full md:peer-checked:after:translate-y-0 rtl:peer-checked:after:-translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:left-[2px] md:after:top-[2px] md:after:start-[2px] after:bg-white after:border-gray-300 after:border after:rounded-full after:h-6 after:w-6 after:transition-all dark:border-gray-600 dark:peer-checked:bg-indigo-900 flex flex-col md:flex-row items-center justify-between py-1 md:py-0"
+        id="nav-content"
+        class="max-w-7xl mx-auto px-6 flex items-center justify-between h-16 opacity-0 invisible transition-opacity duration-700"
       >
-        <svg
-          xmlns="http://www.w3.org/2000/svg"
-          viewBox="0 0 20 20"
-          fill="currentColor"
-          class="size-6"
+        <a
+          href="#"
+          class="text-xl font-bold text-indigo-600 dark:text-indigo-400 tracking-wide"
         >
-          <path
-            d="M10 2a.75.75 0 0 1 .75.75v1.5a.75.75 0 0 1-1.5 0v-1.5A.75.75 0 0 1 10 2ZM10 15a.75.75 0 0 1 .75.75v1.5a.75.75 0 0 1-1.5 0v-1.5A.75.75 0 0 1 10 15ZM10 7a3 3 0 1 0 0 6 3 3 0 0 0 0-6ZM15.657 5.404a.75.75 0 1 0-1.06-1.06l-1.061 1.06a.75.75 0 0 0 1.06 1.06l1.06-1.06ZM6.464 14.596a.75.75 0 1 0-1.06-1.06l-1.06 1.06a.75.75 0 0 0 1.06 1.06l1.06-1.06ZM18 10a.75.75 0 0 1-.75.75h-1.5a.75.75 0 0 1 0-1.5h1.5A.75.75 0 0 1 18 10ZM5 10a.75.75 0 0 1-.75.75h-1.5a.75.75 0 0 1 0-1.5h1.5A.75.75 0 0 1 5 10ZM14.596 15.657a.75.75 0 0 0 1.06-1.06l-1.06-1.061a.75.75 0 1 0-1.06 1.06l1.06 1.06ZM5.404 6.464a.75.75 0 0 0 1.06-1.06l-1.06-1.06a.75.75 0 1 0-1.061 1.06l1.06 1.06Z"
+          Luis<span class="text-gray-800 dark:text-gray-100">Palacio</span>
+        </a>
+
+        <div class="hidden md:flex space-x-8 font-medium">
+          <a
+            href="#home"
+            class="text-gray-700 dark:text-gray-300 hover:text-indigo-600 dark:hover:text-indigo-400 transition"
+          >
+            Inicio
+          </a>
+          <a
+            href="#skills"
+            class="text-gray-700 dark:text-gray-300 hover:text-indigo-600 dark:hover:text-indigo-400 transition"
+          >
+            Habilidades
+          </a>
+          <a
+            href="#projects"
+            class="text-gray-700 dark:text-gray-300 hover:text-indigo-600 dark:hover:text-indigo-400 transition"
+          >
+            Proyectos
+          </a>
+          <a
+            href="#contact"
+            class="text-gray-700 dark:text-gray-300 hover:text-indigo-600 dark:hover:text-indigo-400 transition"
+          >
+            Contacto
+          </a>
+        </div>
+        <label class="p-2 rounded-full cursor-pointer z-10">
+          <input
+            type="checkbox"
+            value=""
+            class="sr-only peer z-10"
+            id="toggle-theme"
           />
-        </svg>
-        <svg
-          xmlns="http://www.w3.org/2000/svg"
-          viewBox="0 0 20 20"
-          fill="currentColor"
-          class="size-6"
-        >
-          <path
-            fill-rule="evenodd"
-            d="M7.455 2.004a.75.75 0 0 1 .26.77 7 7 0 0 0 9.958 7.967.75.75 0 0 1 1.067.853A8.5 8.5 0 1 1 6.647 1.921a.75.75 0 0 1 .808.083Z"
-            clip-rule="evenodd"
-          />
-        </svg>
+          <div
+            class="relative h-13 w-7 md:w-13 md:h-7 bg-gray-400 peer-focus:outline-none rounded-full peer dark:bg-gray-700 md:peer-checked:after:translate-x-full rtl:peer-checked:after:-translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:left-[2px] md:after:top-[2px] md:after:start-[2px] after:bg-white after:border-gray-300 after:border after:rounded-full after:h-6 after:w-6 after:transition-all dark:border-gray-600 dark:peer-checked:bg-indigo-900 flex flex-col md:flex-row items-center justify-between py-1 md:py-0"
+          >
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              viewBox="0 0 20 20"
+              fill="currentColor"
+              class="size-6"
+            >
+              <path
+                d="M10 2a.75.75 0 0 1 .75.75v1.5a.75.75 0 0 1-1.5 0v-1.5A.75.75 0 0 1 10 2ZM10 15a.75.75 0 0 1 .75.75v1.5a.75.75 0 0 1-1.5 0v-1.5A.75.75 0 0 1 10 15ZM10 7a3 3 0 1 0 0 6 3 3 0 0 0 0-6ZM15.657 5.404a.75.75 0 1 0-1.06-1.06l-1.061 1.06a.75.75 0 0 0 1.06 1.06l1.06-1.06ZM6.464 14.596a.75.75 0 1 0-1.06-1.06l-1.06 1.06a.75.75 0 0 0 1.06 1.06l1.06-1.06ZM18 10a.75.75 0 0 1-.75.75h-1.5a.75.75 0 0 1 0-1.5h1.5A.75.75 0 0 1 18 10ZM5 10a.75.75 0 0 1-.75.75h-1.5a.75.75 0 0 1 0-1.5h1.5A.75.75 0 0 1 5 10ZM14.596 15.657a.75.75 0 0 0 1.06-1.06l-1.06-1.061a.75.75 0 1 0-1.06 1.06l1.06 1.06ZM5.404 6.464a.75.75 0 0 0 1.06-1.06l-1.06-1.06a.75.75 0 1 0-1.061 1.06l1.06 1.06Z"
+              />
+            </svg>
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              viewBox="0 0 20 20"
+              fill="currentColor"
+              class="size-6"
+            >
+              <path
+                fill-rule="evenodd"
+                d="M7.455 2.004a.75.75 0 0 1 .26.77 7 7 0 0 0 9.958 7.967.75.75 0 0 1 1.067.853A8.5 8.5 0 1 1 6.647 1.921a.75.75 0 0 1 .808.083Z"
+                clip-rule="evenodd"
+              />
+            </svg>
+          </div>
+        </label>
+
+        <div class="md:hidden">
+          <button id="menu-btn" class="focus:outline-none">
+            <svg
+              class="w-7 h-7 text-gray-700 dark:text-gray-300"
+              fill="none"
+              stroke="currentColor"
+              viewBox="0 0 24 24"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                d="M4 6h16M4 12h16M4 18h16"
+              ></path>
+            </svg>
+          </button>
+        </div>
       </div>
-    </label>
+
+      <div id="menu" class="hidden md:hidden px-6 pb-4">
+        <a
+          href="#home"
+          class="block py-2 text-gray-700 dark:text-gray-300 hover:text-indigo-600 dark:hover:text-indigo-400"
+          >Inicio</a
+        >
+        <a
+          href="#skills"
+          class="block py-2 text-gray-700 dark:text-gray-300 hover:text-indigo-600 dark:hover:text-indigo-400"
+          >Habilidades</a
+        >
+        <a
+          href="#projects"
+          class="block py-2 text-gray-700 dark:text-gray-300 hover:text-indigo-600 dark:hover:text-indigo-400"
+          >Proyectos</a
+        >
+        <a
+          href="#contact"
+          class="block py-2 text-gray-700 dark:text-gray-300 hover:text-indigo-600 dark:hover:text-indigo-400"
+          >Contacto</a
+        >
+        <label class="p-2 rounded-full cursor-pointer z-10">
+          <input
+            type="checkbox"
+            value=""
+            class="sr-only peer z-10"
+            id="toggle-theme"
+          />
+          <div
+            class="relative h-13 w-7 md:w-13 md:h-7 bg-gray-400 peer-focus:outline-none rounded-full peer dark:bg-gray-700 peer-checked:after:translate-x-full rtl:peer-checked:after:-translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:left-[2px] md:after:top-[2px] md:after:start-[2px] after:bg-white after:border-gray-300 after:border after:rounded-full after:h-6 after:w-6 after:transition-all dark:border-gray-600 dark:peer-checked:bg-indigo-900 flex flex-col md:flex-row items-center justify-between py-1 md:py-0"
+          >
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              viewBox="0 0 20 20"
+              fill="currentColor"
+              class="size-6"
+            >
+              <path
+                d="M10 2a.75.75 0 0 1 .75.75v1.5a.75.75 0 0 1-1.5 0v-1.5A.75.75 0 0 1 10 2ZM10 15a.75.75 0 0 1 .75.75v1.5a.75.75 0 0 1-1.5 0v-1.5A.75.75 0 0 1 10 15ZM10 7a3 3 0 1 0 0 6 3 3 0 0 0 0-6ZM15.657 5.404a.75.75 0 1 0-1.06-1.06l-1.061 1.06a.75.75 0 0 0 1.06 1.06l1.06-1.06ZM6.464 14.596a.75.75 0 1 0-1.06-1.06l-1.06 1.06a.75.75 0 0 0 1.06 1.06l1.06-1.06ZM18 10a.75.75 0 0 1-.75.75h-1.5a.75.75 0 0 1 0-1.5h1.5A.75.75 0 0 1 18 10ZM5 10a.75.75 0 0 1-.75.75h-1.5a.75.75 0 0 1 0-1.5h1.5A.75.75 0 0 1 5 10ZM14.596 15.657a.75.75 0 0 0 1.06-1.06l-1.06-1.061a.75.75 0 1 0-1.06 1.06l1.06 1.06ZM5.404 6.464a.75.75 0 0 0 1.06-1.06l-1.06-1.06a.75.75 0 1 0-1.061 1.06l1.06 1.06Z"
+              />
+            </svg>
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              viewBox="0 0 20 20"
+              fill="currentColor"
+              class="size-6"
+            >
+              <path
+                fill-rule="evenodd"
+                d="M7.455 2.004a.75.75 0 0 1 .26.77 7 7 0 0 0 9.958 7.967.75.75 0 0 1 1.067.853A8.5 8.5 0 1 1 6.647 1.921a.75.75 0 0 1 .808.083Z"
+                clip-rule="evenodd"
+              />
+            </svg>
+          </div>
+        </label>
+      </div>
+    </nav>
 
     <section
+      id="home"
       class="min-h-screen flex flex-col md:flex-row items-center justify-center gap-3 md:w-[85%] lg:w-[95%] xl:w-[70%] pt-16"
     >
       <div
@@ -81,11 +200,10 @@
         </p>
         <div class="flex gap-1 items-center">
           <button
-            id="btnProjects"
+            id="btn-contact"
             class="animate-fadeSlideUp text-xs lg:text-lg mr-8 bg-indigo-600 ring-2 ring-indigo-600 text-white px-4 py-2 lg:px-6 lg:py-3 rounded-lg shadow-lg hover:bg-indigo-700 transition cursor-pointer pointer-events-auto hover:shadow-indigo-500/50 dark:shadow-xl"
-            onclick="turnOnLaptop(event)"
           >
-            Ver mis proyectos
+            Contactame
           </button>
           <button
             class="flex animate-fadeSlideUp text-xs lg:text-lg font-semibold ring-2 ring-indigo-600 text-indigo-600 bg-gray-200 px-4 py-2 lg:px-6 lg:py-3 rounded-lg shadow-lg dark:bg-gray-900 dark:text-stone-50 transition cursor-pointer pointer-events-auto hover:shadow-indigo-500/50 dark:shadow-xl"
@@ -131,7 +249,7 @@
 
           <div class="bottom_part h-70 pt-2">
             <div class="bg-gray-300/50 dark:bg-gray-500/50 h-40 px-2 pt-2 mb-3">
-              <img src="./img/keyboard-black.png" />
+              <img src="./assets/img/keyboard-black.png" />
             </div>
 
             <div class="flex justify-center items-center">
@@ -143,6 +261,7 @@
     </section>
 
     <section
+      id="skills"
       class="w-full py-16 bg-gradient-to-br from-indigo-50 to-blue-100 dark:from-gray-800 dark:to-indigo-900/20"
     >
       <div class="container mx-auto px-6">
@@ -153,555 +272,86 @@
           <span class="text-indigo-600 dark:text-indigo-400">Habilidades</span>
         </h2>
 
-        <div class="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-5xl mx-auto">
-          <!-- Frontend Development -->
-          <div
-            class="bg-white dark:bg-gray-800 rounded-xl shadow-lg p-6 transform transition-all duration-300 hover:scale-[1.02]"
-          >
-            <div class="flex items-center mb-4">
-              <div
-                class="w-14 h-14 bg-indigo-100 dark:bg-indigo-900/30 rounded-lg flex items-center justify-center mr-4"
-              >
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  class="h-8 w-8 text-indigo-600 dark:text-indigo-400"
-                  fill="none"
-                  viewBox="0 0 24 24"
-                  stroke="currentColor"
-                >
-                  <path
-                    stroke-linecap="round"
-                    stroke-linejoin="round"
-                    stroke-width="2"
-                    d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4"
-                  />
-                </svg>
-              </div>
-              <h3 class="text-xl font-semibold text-gray-800 dark:text-white">
-                Frontend Development
-              </h3>
-            </div>
-
-            <div class="space-y-4 mt-6">
-              <div>
-                <div class="flex justify-between mb-1">
-                  <span
-                    class="text-sm font-medium text-gray-700 dark:text-gray-300"
-                    >React</span
-                  >
-                  <span
-                    class="text-sm font-medium text-gray-700 dark:text-gray-300"
-                    >90%</span
-                  >
-                </div>
-                <div
-                  class="w-full bg-gray-200 rounded-full h-2.5 dark:bg-gray-700"
-                >
-                  <div
-                    class="bg-indigo-600 h-2.5 rounded-full"
-                    style="width: 90%"
-                  ></div>
-                </div>
-              </div>
-
-              <div>
-                <div class="flex justify-between mb-1">
-                  <span
-                    class="text-sm font-medium text-gray-700 dark:text-gray-300"
-                    >Vue</span
-                  >
-                  <span
-                    class="text-sm font-medium text-gray-700 dark:text-gray-300"
-                    >65%</span
-                  >
-                </div>
-                <div
-                  class="w-full bg-gray-200 rounded-full h-2.5 dark:bg-gray-700"
-                >
-                  <div
-                    class="bg-indigo-600 h-2.5 rounded-full"
-                    style="width: 65%"
-                  ></div>
-                </div>
-              </div>
-
-              <div>
-                <div class="flex justify-between mb-1">
-                  <span
-                    class="text-sm font-medium text-gray-700 dark:text-gray-300"
-                    >JavaScript</span
-                  >
-                  <span
-                    class="text-sm font-medium text-gray-700 dark:text-gray-300"
-                    >90%</span
-                  >
-                </div>
-                <div
-                  class="w-full bg-gray-200 rounded-full h-2.5 dark:bg-gray-700"
-                >
-                  <div
-                    class="bg-indigo-600 h-2.5 rounded-full"
-                    style="width: 98%"
-                  ></div>
-                </div>
-              </div>
-
-              <div>
-                <div class="flex justify-between mb-1">
-                  <span
-                    class="text-sm font-medium text-gray-700 dark:text-gray-300"
-                    >Tailwind CSS</span
-                  >
-                  <span
-                    class="text-sm font-medium text-gray-700 dark:text-gray-300"
-                    >70%</span
-                  >
-                </div>
-                <div
-                  class="w-full bg-gray-200 rounded-full h-2.5 dark:bg-gray-700"
-                >
-                  <div
-                    class="bg-indigo-600 h-2.5 rounded-full"
-                    style="width: 70%"
-                  ></div>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <div
-            class="bg-white dark:bg-gray-800 rounded-xl shadow-lg p-6 transform transition-all duration-300 hover:scale-[1.02]"
-          >
-            <div class="flex items-center mb-4">
-              <div
-                class="w-14 h-14 bg-indigo-100 dark:bg-indigo-900/30 rounded-lg flex items-center justify-center mr-4"
-              >
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  class="h-8 w-8 text-indigo-600 dark:text-indigo-400"
-                  fill="none"
-                  viewBox="0 0 24 24"
-                  stroke="currentColor"
-                >
-                  <path
-                    stroke-linecap="round"
-                    stroke-linejoin="round"
-                    stroke-width="2"
-                    d="M5 12h14M5 12a2 2 0 01-2-2V6a2 2 0 012-2h14a2 2 0 012 2v4a2 2 0 01-2 2M5 12a2 2 0 00-2 2v4a2 2 0 002 2h14a2 2 0 002-2v-4a2 2 0 00-2-2"
-                  />
-                </svg>
-              </div>
-              <h3 class="text-xl font-semibold text-gray-800 dark:text-white">
-                Backend Development
-              </h3>
-            </div>
-
-            <div class="space-y-4 mt-6">
-              <div>
-                <div class="flex justify-between mb-1">
-                  <span
-                    class="text-sm font-medium text-gray-700 dark:text-gray-300"
-                    >Node.js</span
-                  >
-                  <span
-                    class="text-sm font-medium text-gray-700 dark:text-gray-300"
-                    >88%</span
-                  >
-                </div>
-                <div
-                  class="w-full bg-gray-200 rounded-full h-2.5 dark:bg-gray-700"
-                >
-                  <div
-                    class="bg-indigo-600 h-2.5 rounded-full"
-                    style="width: 88%"
-                  ></div>
-                </div>
-              </div>
-
-              <div>
-                <div class="flex justify-between mb-1">
-                  <span
-                    class="text-sm font-medium text-gray-700 dark:text-gray-300"
-                    >Express</span
-                  >
-                  <span
-                    class="text-sm font-medium text-gray-700 dark:text-gray-300"
-                    >85%</span
-                  >
-                </div>
-                <div
-                  class="w-full bg-gray-200 rounded-full h-2.5 dark:bg-gray-700"
-                >
-                  <div
-                    class="bg-indigo-600 h-2.5 rounded-full"
-                    style="width: 85%"
-                  ></div>
-                </div>
-              </div>
-
-              <div>
-                <div class="flex justify-between mb-1">
-                  <span
-                    class="text-sm font-medium text-gray-700 dark:text-gray-300"
-                    >NestJs</span
-                  >
-                  <span
-                    class="text-sm font-medium text-gray-700 dark:text-gray-300"
-                    >75%</span
-                  >
-                </div>
-                <div
-                  class="w-full bg-gray-200 rounded-full h-2.5 dark:bg-gray-700"
-                >
-                  <div
-                    class="bg-indigo-600 h-2.5 rounded-full"
-                    style="width: 75%"
-                  ></div>
-                </div>
-              </div>
-
-              <div>
-                <div class="flex justify-between mb-1">
-                  <span
-                    class="text-sm font-medium text-gray-700 dark:text-gray-300"
-                    >PHP</span
-                  >
-                  <span
-                    class="text-sm font-medium text-gray-700 dark:text-gray-300"
-                    >80%</span
-                  >
-                </div>
-                <div
-                  class="w-full bg-gray-200 rounded-full h-2.5 dark:bg-gray-700"
-                >
-                  <div
-                    class="bg-indigo-600 h-2.5 rounded-full"
-                    style="width: 80%"
-                  ></div>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <div
-            class="bg-white dark:bg-gray-800 rounded-xl shadow-lg p-6 transform transition-all duration-300 hover:scale-[1.02]"
-          >
-            <div class="flex items-center mb-4">
-              <div
-                class="w-14 h-14 bg-indigo-100 dark:bg-indigo-900/30 rounded-lg flex items-center justify-center mr-4"
-              >
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  class="h-8 w-8 text-indigo-600 dark:text-indigo-400"
-                  fill="none"
-                  viewBox="0 0 24 24"
-                  stroke="currentColor"
-                >
-                  <path
-                    stroke-linecap="round"
-                    stroke-linejoin="round"
-                    stroke-width="2"
-                    d="M3 15a4 4 0 004 4h9a5 5 0 10-.1-9.999 5.002 5.002 0 10-9.78 2.096A4.001 4.001 0 003 15z"
-                  />
-                </svg>
-              </div>
-              <h3 class="text-xl font-semibold text-gray-800 dark:text-white">
-                Base de Datos
-              </h3>
-            </div>
-
-            <div class="space-y-4 mt-6">
-              <div>
-                <div class="flex justify-between mb-1">
-                  <span
-                    class="text-sm font-medium text-gray-700 dark:text-gray-300"
-                    >MySQL</span
-                  >
-                  <span
-                    class="text-sm font-medium text-gray-700 dark:text-gray-300"
-                    >90%</span
-                  >
-                </div>
-                <div
-                  class="w-full bg-gray-200 rounded-full h-2.5 dark:bg-gray-700"
-                >
-                  <div
-                    class="bg-indigo-600 h-2.5 rounded-full"
-                    style="width: 90%"
-                  ></div>
-                </div>
-              </div>
-
-              <div>
-                <div class="flex justify-between mb-1">
-                  <span
-                    class="text-sm font-medium text-gray-700 dark:text-gray-300"
-                    >PostgreSQL</span
-                  >
-                  <span
-                    class="text-sm font-medium text-gray-700 dark:text-gray-300"
-                    >85%</span
-                  >
-                </div>
-                <div
-                  class="w-full bg-gray-200 rounded-full h-2.5 dark:bg-gray-700"
-                >
-                  <div
-                    class="bg-indigo-600 h-2.5 rounded-full"
-                    style="width: 85%"
-                  ></div>
-                </div>
-              </div>
-
-              <div>
-                <div class="flex justify-between mb-1">
-                  <span
-                    class="text-sm font-medium text-gray-700 dark:text-gray-300"
-                    >SQL Server</span
-                  >
-                  <span
-                    class="text-sm font-medium text-gray-700 dark:text-gray-300"
-                    >80%</span
-                  >
-                </div>
-                <div
-                  class="w-full bg-gray-200 rounded-full h-2.5 dark:bg-gray-700"
-                >
-                  <div
-                    class="bg-indigo-600 h-2.5 rounded-full"
-                    style="width: 80%"
-                  ></div>
-                </div>
-              </div>
-
-              <div>
-                <div class="flex justify-between mb-1">
-                  <span
-                    class="text-sm font-medium text-gray-700 dark:text-gray-300"
-                    >MongoDB</span
-                  >
-                  <span
-                    class="text-sm font-medium text-gray-700 dark:text-gray-300"
-                    >82%</span
-                  >
-                </div>
-                <div
-                  class="w-full bg-gray-200 rounded-full h-2.5 dark:bg-gray-700"
-                >
-                  <div
-                    class="bg-indigo-600 h-2.5 rounded-full"
-                    style="width: 82%"
-                  ></div>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <div
-            class="bg-white dark:bg-gray-800 rounded-xl shadow-lg p-6 transform transition-all duration-300 hover:scale-[1.02]"
-          >
-            <div class="flex items-center mb-4">
-              <div
-                class="w-14 h-14 bg-indigo-100 dark:bg-indigo-900/30 rounded-lg flex items-center justify-center mr-4"
-              >
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  class="h-8 w-8 text-indigo-600 dark:text-indigo-400"
-                  fill="none"
-                  viewBox="0 0 24 24"
-                  stroke="currentColor"
-                >
-                  <path
-                    stroke-linecap="round"
-                    stroke-linejoin="round"
-                    stroke-width="2"
-                    d="M9.75 17L9 20l-1 1h8l-1-1-.75-3M3 13h18M5 17h14a2 2 0 002-2V5a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"
-                  />
-                </svg>
-              </div>
-              <h3 class="text-xl font-semibold text-gray-800 dark:text-white">
-                DevOps & Tools
-              </h3>
-            </div>
-
-            <div class="space-y-4 mt-6">
-              <div>
-                <div class="flex justify-between mb-1">
-                  <span
-                    class="text-sm font-medium text-gray-700 dark:text-gray-300"
-                    >Git</span
-                  >
-                  <span
-                    class="text-sm font-medium text-gray-700 dark:text-gray-300"
-                    >95%</span
-                  >
-                </div>
-                <div
-                  class="w-full bg-gray-200 rounded-full h-2.5 dark:bg-gray-700"
-                >
-                  <div
-                    class="bg-indigo-600 h-2.5 rounded-full"
-                    style="width: 95%"
-                  ></div>
-                </div>
-              </div>
-
-              <div>
-                <div class="flex justify-between mb-1">
-                  <span
-                    class="text-sm font-medium text-gray-700 dark:text-gray-300"
-                    >Docker</span
-                  >
-                  <span
-                    class="text-sm font-medium text-gray-700 dark:text-gray-300"
-                    >85%</span
-                  >
-                </div>
-                <div
-                  class="w-full bg-gray-200 rounded-full h-2.5 dark:bg-gray-700"
-                >
-                  <div
-                    class="bg-indigo-600 h-2.5 rounded-full"
-                    style="width: 85%"
-                  ></div>
-                </div>
-              </div>
-
-              <div>
-                <div class="flex justify-between mb-1">
-                  <span
-                    class="text-sm font-medium text-gray-700 dark:text-gray-300"
-                    >Azure</span
-                  >
-                  <span
-                    class="text-sm font-medium text-gray-700 dark:text-gray-300"
-                    >78%</span
-                  >
-                </div>
-                <div
-                  class="w-full bg-gray-200 rounded-full h-2.5 dark:bg-gray-700"
-                >
-                  <div
-                    class="bg-indigo-600 h-2.5 rounded-full"
-                    style="width: 78%"
-                  ></div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
+        <div
+          class="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-5xl mx-auto"
+          id="skillCards"
+        ></div>
       </div>
     </section>
 
     <section
       id="projects"
-      class="h-full w-full flex flex-col items-center justify-center px-6 py-16 bg-white dark:bg-gray-900"
+      class="h-full w-full flex flex-col items-center justify-center px-6 py-20 bg-white dark:bg-gray-900"
     >
-      <h2 class="text-3xl font-bold mb-12 text-gray-900 dark:text-gray-100">
+      <h2
+        class="text-3xl md:text-4xl font-extrabold mb-6 text-gray-900 dark:text-gray-100"
+      >
         Mis Proyectos
       </h2>
-      <div class="grid grid-cols-1 md:grid-cols-2 gap-8 w-full max-w-5xl">
-        <div
-          class="bg-white dark:bg-gray-800 rounded-xl shadow-lg overflow-hidden transform transition-all duration-300 hover:scale-105 hover:shadow-xl"
-        >
+      <p
+        class="text-lg text-gray-600 dark:text-gray-300 max-w-2xl text-center mb-12"
+      >
+        A lo largo de mi camino como desarrollador he trabajado en diferentes
+        ideas y soluciones.
+      </p>
+
+      <div
+        class="grid grid-cols-1 md:grid-cols-[3fr_2fr] gap-12 w-full max-w-6xl items-center"
+      >
+        <div class="relative flex justify-center">
           <div
-            class="h-48 bg-gradient-to-r from-indigo-500 to-purple-600 flex items-center justify-center"
+            class="relative z-30 -mr-20 transform transition-transform duration-500 hover:scale-110 hover:z-50 cursor-pointer"
           >
-            <span class="text-white text-5xl">🚀</span>
+            <img
+              src="./assets/img/proyecto1.jpg"
+              alt="Proyecto 1"
+              class="rounded-xl shadow-2xl h-[400px] w-[300px] object-cover hover:w-[600px] transition-all duration-500"
+            />
           </div>
-          <div class="p-6">
-            <h3 class="text-xl font-bold mb-2 text-gray-800 dark:text-white">
-              Sistema E-commerce
-            </h3>
-            <p class="text-gray-600 dark:text-gray-300 mb-4">
-              Plataforma completa de comercio electrónico con carrito de
-              compras, pasarela de pago y panel de administración.
-            </p>
-            <div class="flex flex-wrap gap-2">
-              <span
-                class="px-3 py-1 bg-indigo-100 text-indigo-800 dark:bg-indigo-900/30 dark:text-indigo-300 rounded-full text-sm"
-                >Vue</span
-              >
-              <span
-                class="px-3 py-1 bg-indigo-100 text-indigo-800 dark:bg-indigo-900/30 dark:text-indigo-300 rounded-full text-sm"
-                >PHP</span
-              >
-              <span
-                class="px-3 py-1 bg-indigo-100 text-indigo-800 dark:bg-indigo-900/30 dark:text-indigo-300 rounded-full text-sm"
-                >MySQL</span
-              >
-            </div>
+
+          <div
+            class="relative z-20 -mr-20 transform transition-transform duration-500 hover:scale-110 hover:z-50 cursor-pointer"
+          >
+            <img
+              src="./assets/img/proyecto2.png"
+              alt="Proyecto 2"
+              class="rounded-xl shadow-2xl h-[400px] w-[300px] object-cover hover:w-[600px] transition-all duration-500"
+            />
+          </div>
+
+          <div
+            class="relative z-10 transform transition-transform duration-500 hover:scale-110 hover:z-50 cursor-pointer"
+          >
+            <img
+              src="./assets/img/proyecto3.jpg"
+              alt="Proyecto 3"
+              class="rounded-xl shadow-2xl h-[400px] w-[300px] object-cover hover:w-[600px] transition-all duration-500"
+            />
           </div>
         </div>
 
-        <div
-          class="bg-white dark:bg-gray-800 rounded-xl shadow-lg overflow-hidden transform transition-all duration-300 hover:scale-105 hover:shadow-xl"
-        >
-          <div
-            class="h-48 bg-gradient-to-r from-blue-500 to-cyan-600 flex items-center justify-center"
+        <div class="text-center md:text-left">
+          <h3 class="text-2xl font-bold text-gray-800 dark:text-gray-100 mb-4">
+            Una muestra de mi trabajo
+          </h3>
+          <p class="text-gray-600 dark:text-gray-300 mb-6 max-w-md">
+            Cada uno de estos proyectos cuenta una historia distinta: resolver
+            un problema, mejorar una experiencia o dar vida a una idea. Mi
+            enfoque siempre está en unir diseño y tecnología para crear algo
+            útil y con impacto real.
+          </p>
+          <a
+            href="./projects.html"
+            class="inline-block bg-gradient-to-r from-indigo-600 to-purple-600 hover:from-indigo-700 hover:to-purple-700 text-white font-semibold px-6 py-3 rounded-lg shadow-lg transition-transform transform hover:scale-105"
           >
-            <span class="text-white text-5xl">📊</span>
-          </div>
-          <div class="p-6">
-            <h3 class="text-xl font-bold mb-2 text-gray-800 dark:text-white">
-              Dashboard Analytics
-            </h3>
-            <p class="text-gray-600 dark:text-gray-300 mb-4">
-              Panel de control interactivo para visualización de datos con
-              gráficos en tiempo real y reportes personalizados.
-            </p>
-            <div class="flex flex-wrap gap-2">
-              <span
-                class="px-3 py-1 bg-indigo-100 text-indigo-800 dark:bg-indigo-900/30 dark:text-indigo-300 rounded-full text-sm"
-                >React</span
-              >
-              <span
-                class="px-3 py-1 bg-indigo-100 text-indigo-800 dark:bg-indigo-900/30 dark:text-indigo-300 rounded-full text-sm"
-                >Node.js</span
-              >
-              <span
-                class="px-3 py-1 bg-indigo-100 text-indigo-800 dark:bg-indigo-900/30 dark:text-indigo-300 rounded-full text-sm"
-                >PostgreSQL</span
-              >
-            </div>
-          </div>
-        </div>
-
-        <div
-          class="bg-white dark:bg-gray-800 rounded-xl shadow-lg overflow-hidden transform transition-all duration-300 hover:scale-105 hover:shadow-xl"
-        >
-          <div
-            class="h-48 bg-gradient-to-r from-purple-500 to-pink-600 flex items-center justify-center"
-          >
-            <span class="text-white text-5xl">🌐</span>
-          </div>
-          <div class="p-6">
-            <h3 class="text-xl font-bold mb-2 text-gray-800 dark:text-white">
-              Portal de Tickets
-            </h3>
-            <p class="text-gray-600 dark:text-gray-300 mb-4">
-              Sistema de gestión de tickets para control de atencion al cliente.
-            </p>
-            <div class="flex flex-wrap gap-2">
-              <span
-                class="px-3 py-1 bg-indigo-100 text-indigo-800 dark:bg-indigo-900/30 dark:text-indigo-300 rounded-full text-sm"
-                >React</span
-              >
-              <span
-                class="px-3 py-1 bg-indigo-100 text-indigo-800 dark:bg-indigo-900/30 dark:text-indigo-300 rounded-full text-sm"
-                >Nest</span
-              >
-              <span
-                class="px-3 py-1 bg-indigo-100 text-indigo-800 dark:bg-indigo-900/30 dark:text-indigo-300 rounded-full text-sm"
-                >SQL Server</span
-              >
-            </div>
-          </div>
+            Ver todos los proyectos
+          </a>
         </div>
       </div>
     </section>
 
     <section
+      id="contact"
       class="w-full py-16 bg-gradient-to-br from-white to-indigo-50 dark:from-gray-800 dark:to-gray-900"
     >
       <div class="container mx-auto px-4 max-w-6xl">
@@ -719,7 +369,7 @@
 
         <div class="grid md:grid-cols-2 gap-10 items-center">
           <div
-            class="contact-card bg-white dark:bg-gray-800 rounded-2xl shadow-xl  p-4 lg:p-8 border border-indigo-100 dark:border-gray-700 w-[100%]"
+            class="contact-card bg-white dark:bg-gray-800 rounded-2xl shadow-xl p-4 lg:p-8 border border-indigo-100 dark:border-gray-700 w-[100%]"
           >
             <div class="flex items-center mb-6">
               <div
@@ -765,7 +415,9 @@
                 </svg>
                 <div>
                   <p class="text-sm text-gray-500 dark:text-gray-400">Email</p>
-                  <p class="text-indigo-600 dark:text-indigo-400 font-medium text-xs lg:text-lg">
+                  <p
+                    class="text-indigo-600 dark:text-indigo-400 font-medium text-xs lg:text-lg"
+                  >
                     palaciodimasluisenrique@gmail.com
                   </p>
                 </div>
@@ -880,9 +532,9 @@
               class="relative inline-block md:float-right md:ml-8 mb-6 md:mb-0"
             >
               <img
-                src="./img/luis_small.png"
+                src="./assets/img/luis_small.png"
                 alt="Luis Palacio"
-                class="w-56 h-56 rounded-full object-cover shadow-xl mx-auto md:mx-0 border-4 border-white dark:border-gray-800"
+                class="w-56 h-56 rounded-full object-cover shadow-xl mx-auto md:mx-0"
               />
               <div
                 class="absolute -bottom-2 -right-2 bg-indigo-600 text-white py-1 px-3 rounded-full text-sm font-medium shadow-lg"
@@ -907,7 +559,7 @@
 
             <div class="animate-pulse-gentle inline-block">
               <a
-                href="mailto:contacto@luispalacio.com"
+                href="mailto:palaciodimasluisenrique@gmail.com"
                 class="inline-flex items-center bg-gradient-to-r from-indigo-600 to-purple-600 hover:from-indigo-700 hover:to-purple-700 text-white font-semibold px-6 py-3 rounded-lg shadow-lg transition-all duration-300 transform hover:scale-105"
               >
                 <svg

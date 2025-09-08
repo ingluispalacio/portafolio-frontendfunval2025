@@ -1,0 +1,20 @@
+[
+  {
+    "imgName": "proyecto1.jpg",
+    "title": "Tienda de postres",
+    "description": "Una aplicación web para explorar y comprar postres, con un diseño atractivo y fácil de usar que mejora la experiencia de compra en línea.",
+    "link": "#"
+  },
+  {
+    "imgName": "proyecto2.png",
+    "title": "Tic Tac Toe",
+    "description": "Un clásico juego de tres en raya desarrollado para practicar lógica y brindar entretenimiento rápido con una interfaz sencilla e interactiva.",
+    "link": "https://ingluispalacio.github.io/funval_tic_tac_toe/"
+  },
+  {
+    "imgName": "proyecto3.jpg",
+    "title": "Biblioteca",
+    "description": "Un sistema para gestionar libros y usuarios, pensado para facilitar el registro, préstamo y consulta de ejemplares de manera eficiente.",
+    "link": "https://front-epam-systems.coderintelligence.digital/"
+  }
+]

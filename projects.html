@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Portafolio | Luis Palacio</title>
+    <link rel="stylesheet" href="./css/output.css" />
+    <link rel="stylesheet" href="./css/styles.css" />
+    <script src="./js/particles.min.js"></script>
+    <script src="./js/scripts.js" type="module" defer></script>
+  </head>
+  <body
+    class="bg-gray-100 text-gray-800 font-sans overflow-x-hidden dark:bg-gray-900 dark:text-gray-100 flex flex-col items-center"
+  >
+    <div
+      class="fixed top-0 left-0 w-full h-1.5 bg-gray-100 dark:bg-gray-900 z-50"
+    >
+      <div
+        class="progress-bar h-full bg-gradient-to-r from-indigo-500 to-purple-600 transition-all duration-300"
+        style="width: 0%"
+      ></div>
+    </div>
+
+    <div id="particles-js"></div>
+
+    <label class="fixed top-6 right-6 p-2 rounded-full cursor-pointer z-10">
+      <input
+        type="checkbox"
+        value=""
+        class="sr-only peer z-10"
+        id="toggle-theme"
+      />
+      <div
+        class="relative h-13 w-7 md:w-13 md:h-7 bg-gray-400 peer-focus:outline-none rounded-full peer dark:bg-gray-700 peer-checked:after:translate-y-full md:peer-checked:after:translate-x-full md:peer-checked:after:translate-y-0 rtl:peer-checked:after:-translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:left-[2px] md:after:top-[2px] md:after:start-[2px] after:bg-white after:border-gray-300 after:border after:rounded-full after:h-6 after:w-6 after:transition-all dark:border-gray-600 dark:peer-checked:bg-indigo-900 flex flex-col md:flex-row items-center justify-between py-1 md:py-0"
+      >
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          viewBox="0 0 20 20"
+          fill="currentColor"
+          class="size-6"
+        >
+          <path
+            d="M10 2a.75.75 0 0 1 .75.75v1.5a.75.75 0 0 1-1.5 0v-1.5A.75.75 0 0 1 10 2ZM10 15a.75.75 0 0 1 .75.75v1.5a.75.75 0 0 1-1.5 0v-1.5A.75.75 0 0 1 10 15ZM10 7a3 3 0 1 0 0 6 3 3 0 0 0 0-6ZM15.657 5.404a.75.75 0 1 0-1.06-1.06l-1.061 1.06a.75.75 0 0 0 1.06 1.06l1.06-1.06ZM6.464 14.596a.75.75 0 1 0-1.06-1.06l-1.06 1.06a.75.75 0 0 0 1.06 1.06l1.06-1.06ZM18 10a.75.75 0 0 1-.75.75h-1.5a.75.75 0 0 1 0-1.5h1.5A.75.75 0 0 1 18 10ZM5 10a.75.75 0 0 1-.75.75h-1.5a.75.75 0 0 1 0-1.5h1.5A.75.75 0 0 1 5 10ZM14.596 15.657a.75.75 0 0 0 1.06-1.06l-1.06-1.061a.75.75 0 1 0-1.06 1.06l1.06 1.06ZM5.404 6.464a.75.75 0 0 0 1.06-1.06l-1.06-1.06a.75.75 0 1 0-1.061 1.06l1.06 1.06Z"
+          />
+        </svg>
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          viewBox="0 0 20 20"
+          fill="currentColor"
+          class="size-6"
+        >
+          <path
+            fill-rule="evenodd"
+            d="M7.455 2.004a.75.75 0 0 1 .26.77 7 7 0 0 0 9.958 7.967.75.75 0 0 1 1.067.853A8.5 8.5 0 1 1 6.647 1.921a.75.75 0 0 1 .808.083Z"
+            clip-rule="evenodd"
+          />
+        </svg>
+      </div>
+    </label>
+    <header class="py-6 px-6 text-gray-800 dark:text-white flex items-start w-full">
+       <a
+    href="./"
+    class="inline-flex items-center text-indigo-600 hover:text-indigo-800 font-medium mt-2 w-[50%] "
+  >
+    ← Volver atrás
+  </a>
+      <h1 class="text-3xl font-bold w-[50%]">Mis Proyectos</h1>
+    </header>
+    <main class="px-6 py-12 max-w-7xl mx-auto">
+      <p class="mb-12 text-lg text-gray-700 dark:text-gray-300">
+        Aquí puedes ver una selección más completa de mis proyectos, cada uno
+        con un enfoque diferente pero todos creados con dedicación y pasión por
+        el desarrollo.
+      </p>
+
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-10 min-h-102" id="projects">
+        
+
+      </div>
+    </main>
+
+    <footer class="w-full py-8 bg-gray-800 text-white text-center">
+      <p>© 2025 Luis Palacio. Todos los derechos reservados.</p>
+      <div class="flex justify-center space-x-6 mt-4">
+        <a
+          href="https://github.com/ingluispalacio"
+          class="hover:text-indigo-400 transition-colors"
+          >GitHub</a
+        >
+        <a
+          href="https://www.linkedin.com/in/luis-enrique-palacio-dimas-257658a7/"
+          class="hover:text-indigo-400 transition-colors"
+          >LinkedIn</a
+        >
+      </div>
+    </footer>
+  </body>
+</html>

@@ -28,7 +28,7 @@
   -webkit-animation: open-laptop-monitor 2s forwards;
   -moz-animation: open-laptop-monitor 2s forwards;
   animation: open-laptop-monitor 2s forwards;
-  animation-delay: 5.8s;
+  animation-delay: 4.8s;
 }
 
 .laptop .monitor .monitor-body {
@@ -53,7 +53,7 @@
   -webkit-animation: ShowText 0.5s 2s forwards;
   -o-animation: ShowText 0.5s 2s forwards;
   animation: ShowText 0.5s 2s forwards;
-  animation-delay: 8.3s;
+  animation-delay: 7.3s;
 }
 
 .laptop .bottom_part {
@@ -72,7 +72,7 @@
   -webkit-animation: open-laptop-bottom-part 2s forwards;
   -webkit-animation: open-laptop-bottom-part 2s forwards;
   animation: open-laptop-bottom-part 2s forwards;
-  animation-delay: 5.8s;
+  animation-delay: 4.8s;
 }
 
 
@@ -91,21 +91,21 @@
 
 .animate-fadeInUp {
   animation: fadeInUp-home 1.0s ease-out both;  
-  animation-delay: 4.3s;                    
+  animation-delay: 3.3s;                    
 }
 
 .animate-fadeSlideUp {
   animation: fadeSlideUp-home 0.9s ease-out both;
-  animation-delay: 4.6s;                   
+  animation-delay: 3.6s;                   
 }
 
 .animate-fadeSlideUp:nth-of-type(2) {
-  animation-delay: 4.8s;                    
+  animation-delay: 3.8s;                    
 }
 
 .animate-blurIn {
   animation: blurIn-home 1.0s ease-out both;
-  animation-delay: 4.3s;                    
+  animation-delay: 3.3s;                    
 }
 
 
