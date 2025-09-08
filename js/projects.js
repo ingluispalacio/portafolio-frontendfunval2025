@@ -4,7 +4,12 @@ const getProjects = async () => {
 };
 
 const fillCardProjects = async () => {
-  const data = await getProjects();
+ let data = [];
+  try {
+     data = await getProjects();
+  } catch (error) {
+    console.log(error)
+  }
   const projectCards = document.getElementById("projects");
    data.forEach((project) => {
     const cardContainer = document.createElement("div");

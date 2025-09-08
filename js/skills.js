@@ -4,7 +4,13 @@ const getSkills = async () => {
 };
 
 const fillCardSkills = async () => {
-  const data = await getSkills();
+  let data = [];
+  try {
+     data = await getSkills();
+  } catch (error) {
+    console.log(error)
+  }
+  
   const skillCards = document.getElementById("skillCards")
   data.forEach((skill) => {
     const cardContainer = document.createElement("div");
