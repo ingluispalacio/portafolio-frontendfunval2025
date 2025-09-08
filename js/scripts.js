@@ -156,6 +156,23 @@ if (pathname === "/") {
 }
 if (pathname === "/projects.html") {
   await fillCardProjects();
+  const btnMenu = document.getElementById("menu-btn");
+  btnMenu.addEventListener("click", () => {
+    document.getElementById("menu").classList.toggle("hidden");
+  });
+
+  document.querySelectorAll('a[href^="#"]').forEach((link) => {
+    link.addEventListener("click", (e) => {
+      e.preventDefault();
+      const target = link.getAttribute("href");
+
+      if (target && target !== "#") {
+        document.querySelector(target).scrollIntoView({
+          behavior: "smooth",
+        });
+      }
+    });
+  });
 }
 const toggleTheme = document.getElementById("toggle-theme");
 toggleTheme.addEventListener("click", (event) => {
@@ -172,23 +189,6 @@ toggleTheme.addEventListener("click", (event) => {
     localStorage.theme = "dark";
     checkbox.checked = true;
   }
-});
-const btnMenu = document.getElementById("menu-btn");
-btnMenu.addEventListener("click", () => {
-  document.getElementById("menu").classList.toggle("hidden");
-});
-
-document.querySelectorAll('a[href^="#"]').forEach((link) => {
-  link.addEventListener("click", (e) => {
-    e.preventDefault();
-    const target = link.getAttribute("href");
-
-    if (target && target !== "#") {
-      document.querySelector(target).scrollIntoView({
-        behavior: "smooth",
-      });
-    }
-  });
 });
 
 // window.addEventListener("scroll", () => {
