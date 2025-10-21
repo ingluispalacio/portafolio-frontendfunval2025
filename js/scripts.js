@@ -102,7 +102,7 @@ document.addEventListener("DOMContentLoaded", function () {
     },
     retina_detect: true,
   });
-  if (pathname === "/"|| pathname === "/index.html") {
+  if (pathname === "/"|| pathname === "/index.html" || pathname === "/portafolio-frontendfunval2025" || pathname === "/portafolio-frontendfunval2025/index.html") {
     document.body.style.overflow = "hidden";
 
     const monitor = document.querySelector(".laptop .monitor .monitor-body ");
@@ -130,7 +130,7 @@ document.addEventListener("DOMContentLoaded", function () {
     const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
     const scrollPercent = (scrollTop / (documentHeight - windowHeight)) * 100;
     progressBar.style.width = scrollPercent + "%";
-    if (pathname === "/" || pathname === "/index.html") {
+    if (pathname === "/" || pathname === "/index.html" || pathname === "/portafolio-frontendfunval2025" || pathname === "/portafolio-frontendfunval2025/index.html") {
       const navbar = document.getElementById("navbar");
 
       if (window.scrollY > 50) {
@@ -143,7 +143,7 @@ document.addEventListener("DOMContentLoaded", function () {
     }
   });
 });
-if (pathname === "/" || pathname === "/index.html") {
+if (pathname === "/" || pathname === "/index.html" || pathname === "/portafolio-frontendfunval2025" || pathname === "/portafolio-frontendfunval2025/index.html") {
   await fillCardSkills();
 
   const btnContact = document.getElementById("btn-contact");
@@ -155,7 +155,7 @@ if (pathname === "/" || pathname === "/index.html") {
     document.getElementById("contact").scrollIntoView({ behavior: "smooth" });
   });
 }
-if (pathname === "/projects.html") {
+if (pathname === "/projects.html" || pathname === "/portafolio-frontendfunval2025/projects.html") {
   await fillCardProjects();
   const btnMenu = document.getElementById("menu-btn");
   btnMenu.addEventListener("click", () => {
