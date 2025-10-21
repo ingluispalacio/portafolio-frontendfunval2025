@@ -2,6 +2,8 @@ import { fillCardSkills } from "./skills.js";
 import { fillCardProjects } from "./projects.js";
 
 const pathname = window.location.pathname;
+
+console.log("pathname", pathname);
 document.addEventListener("DOMContentLoaded", function () {
   if (
     localStorage.theme === "dark" ||
