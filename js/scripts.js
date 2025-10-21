@@ -102,7 +102,7 @@ document.addEventListener("DOMContentLoaded", function () {
     },
     retina_detect: true,
   });
-  if (pathname === "/") {
+  if (pathname === "/"|| pathname === "/index.html") {
     document.body.style.overflow = "hidden";
 
     const monitor = document.querySelector(".laptop .monitor .monitor-body ");
@@ -130,7 +130,7 @@ document.addEventListener("DOMContentLoaded", function () {
     const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
     const scrollPercent = (scrollTop / (documentHeight - windowHeight)) * 100;
     progressBar.style.width = scrollPercent + "%";
-    if (pathname === "/") {
+    if (pathname === "/" || pathname === "/index.html") {
       const navbar = document.getElementById("navbar");
 
       if (window.scrollY > 50) {
@@ -143,7 +143,7 @@ document.addEventListener("DOMContentLoaded", function () {
     }
   });
 });
-if (pathname === "/") {
+if (pathname === "/" || pathname === "/index.html") {
   await fillCardSkills();
 
   const btnContact = document.getElementById("btn-contact");

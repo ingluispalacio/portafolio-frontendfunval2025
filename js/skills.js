@@ -1,5 +1,5 @@
 const getSkills = async () => {
-  const response = await fetch("../data/skills.json");
+  const response = await fetch("data/skills.json");
   return response.json();
 };
 
